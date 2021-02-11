@@ -1,12 +1,2 @@
-.content {
-    grid-area: c;
-    background-color: gold;
-}
 
-.item {
-    color: red;
-}
 
-.item.active {
-    color: aqua;
-}

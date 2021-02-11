@@ -1,0 +1,13 @@
+.item {
+    color: red;
+}
+
+.item.active {
+    color: aqua;
+}
+
+.item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
