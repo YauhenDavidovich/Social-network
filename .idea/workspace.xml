@@ -4,7 +4,6 @@
     <list default="true" id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Diaologs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Diaologs.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,7 @@
       <workItem from="1613061299265" duration="4163000" />
       <workItem from="1613293361483" duration="3521000" />
       <workItem from="1613313608928" duration="4774000" />
-      <workItem from="1613407641394" duration="2091000" />
+      <workItem from="1613407641394" duration="2910000" />
     </task>
     <task id="LOCAL-00001" summary="init: start project">
       <created>1612729848665</created>
@@ -106,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613314390375</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: add dialogs page">
+      <created>1613412722330</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1613412722330</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +123,7 @@
     <MESSAGE value="feat: add css modules" />
     <MESSAGE value="feat: change directories structure" />
     <MESSAGE value="feat: add routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add routing" />
+    <MESSAGE value="feat: add dialogs page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add dialogs page" />
   </component>
 </project>
