@@ -12,7 +12,6 @@ const Post: React.FC<PostTypeProps> = (props) => {
             <div><span>like</span></div>
         </div>
     )
-
 }
 
 export default Post;

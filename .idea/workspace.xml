@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -50,11 +57,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\it-incubator\Social-network\src\components\Profile\ProfileInfo" />
       <recent name="D:\it-incubator\Social-network\src\components\Settings" />
       <recent name="D:\it-incubator\Social-network\src\components\News" />
       <recent name="D:\it-incubator\Social-network\src\components\Music" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\it-incubator\Social-network\src\components\Profile\ProfileInfo" />
       <recent name="D:\it-incubator\Social-network\src\components\Profile" />
       <recent name="D:\it-incubator\Social-network\src\components\Navbar" />
       <recent name="D:\it-incubator\Social-network\src\components\Header" />
@@ -75,7 +84,7 @@
       <workItem from="1613061299265" duration="4163000" />
       <workItem from="1613293361483" duration="3521000" />
       <workItem from="1613313608928" duration="4774000" />
-      <workItem from="1613407641394" duration="2910000" />
+      <workItem from="1613407641394" duration="7545000" />
     </task>
     <task id="LOCAL-00001" summary="init: start project">
       <created>1612729848665</created>
@@ -112,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613412722330</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: add dialogs navlinks">
+      <created>1613413966169</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1613413966169</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +140,7 @@
     <MESSAGE value="feat: change directories structure" />
     <MESSAGE value="feat: add routing" />
     <MESSAGE value="feat: add dialogs page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add dialogs page" />
+    <MESSAGE value="feat: add dialogs navlinks" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add dialogs navlinks" />
   </component>
 </project>
