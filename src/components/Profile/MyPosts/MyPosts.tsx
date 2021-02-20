@@ -2,16 +2,19 @@ import React from 'react';
 import style from './MyPosts.module.css'
 import Post from "./Post/Post";
 
+export type PostType = {
+    id: number
+    message: string
+    likesCount: number
+}
+export type ProfilePageType = {
+    posts: Array<PostType>
+}
 
-const MyPosts = () => {
-    let posts = [
-        {id:1, message:"Hi", likesCount: 4},
-        {id:2, message:"Hey", likesCount: 14},
-        {id:3, message:"Good day!", likesCount: 24},
-        {id:4, message:"Yo!", likesCount: 5},
-    ]
 
-    let postElements = posts.map( p => <Post message={p.message} likesCount={p.likesCount}/>)
+const MyPosts: React.FC<ProfilePageType> = (props) => {
+
+    let postElements = props.posts.map( p => <Post message={p.message} likesCount={p.likesCount}/>)
 
     return (
         <div className={style.posts__block}>
