@@ -3,7 +3,7 @@ import style from './Diaologs.module.css'
 import DialogItem, {DialogItemProps} from "./DialogItem/DialogItem";
 import Message, {MessageItemProps} from "./Message/Message";
 
-type DialogsTypeProps = {
+export type DialogsTypeProps = {
     dialogs: Array<DialogItemProps>
     messages: Array<MessageItemProps>
 }
