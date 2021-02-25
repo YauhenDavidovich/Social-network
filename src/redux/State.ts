@@ -1,3 +1,5 @@
+import renderEntireTrees from "../render";
+
 type MessageType = {
     id: number
     message: string
@@ -23,7 +25,7 @@ type DialogPageType = {
     messages: Array<MessageType>
 }
 
-type AppStateProps = {
+export type AppStateProps = {
     profilePage: ProfilePageType
     dialogPage: DialogPageType
 }
@@ -59,6 +61,7 @@ export let addPost = (postMessage: string) => {
     }
 
     state.profilePage.posts.push(newPost)
+    renderEntireTrees(state)
 }
 
 export default state
