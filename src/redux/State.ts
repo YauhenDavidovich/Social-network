@@ -1,4 +1,10 @@
-import renderEntireTrees from "../render";
+let onChageRender: (state: AppStateProps) => void = () => {
+    console.log("State has just been changed")
+}
+
+export const subscribe = (callback: (state: AppStateProps) => void) => {
+    onChageRender = callback
+}
 
 type MessageType = {
     id: number
@@ -63,12 +69,12 @@ export let addPost = (postMessage: string) => {
     }
     state.profilePage.posts.push(newPost)
     state.profilePage.newPostsText = ""
-    renderEntireTrees(state)
+    onChageRender(state)
 }
 
 export let updateNewPostText = (newText: string) => {
     state.profilePage.newPostsText = newText
-    renderEntireTrees(state)
+    onChageRender(state)
 }
 
 
