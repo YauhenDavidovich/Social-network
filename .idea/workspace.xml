@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/State.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/State.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/render.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,9 @@
       <workItem from="1613911056598" duration="5155000" />
       <workItem from="1614019692085" duration="6227000" />
       <workItem from="1614268234666" duration="8382000" />
-      <workItem from="1614365158450" duration="1402000" />
+      <workItem from="1614365158450" duration="2175000" />
+      <workItem from="1614524162711" duration="599000" />
+      <workItem from="1614616782061" duration="2898000" />
     </task>
     <task id="LOCAL-00001" summary="init: start project">
       <created>1612729848665</created>
@@ -155,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614277150789</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: add subscribe">
+      <created>1614367230321</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614367230321</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +180,7 @@
     <MESSAGE value="feat: put the data into the index.ts" />
     <MESSAGE value="feat: pack the data into the state" />
     <MESSAGE value="feat: add adding posts on board" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add adding posts on board" />
+    <MESSAGE value="feat: add subscribe" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add subscribe" />
   </component>
 </project>
