@@ -3,14 +3,14 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {AppStateProps} from "./redux/State";
 import ReactDOM from "react-dom";
-import App from "./App";
+import App, {PropsType} from "./App";
 import store from "./redux/State";
 
-export let renderEntireTrees = (state: AppStateProps) => {
+export let renderEntireTrees = (props: AppStateProps) => {
+    debugger
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state} addPost={store.addPost.bind(store)}
-                 updateNewPostText={store.updateNewPostText.bind(store)}/>
+            <App store={store}/>
         </React.StrictMode>,
         document.getElementById('root')
     );

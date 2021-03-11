@@ -4,6 +4,8 @@
     <list default="true" id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/State.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/State.ts" afterDir="false" />
     </list>
@@ -93,6 +95,9 @@
       <workItem from="1614365158450" duration="2175000" />
       <workItem from="1614524162711" duration="599000" />
       <workItem from="1614616782061" duration="2898000" />
+      <workItem from="1615211577215" duration="3422000" />
+      <workItem from="1615311064522" duration="4322000" />
+      <workItem from="1615476086868" duration="6794000" />
     </task>
     <task id="LOCAL-00001" summary="init: start project">
       <created>1612729848665</created>
@@ -182,5 +187,16 @@
     <MESSAGE value="feat: add adding posts on board" />
     <MESSAGE value="feat: add subscribe" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: add subscribe" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/redux/State.ts</url>
+          <line>61</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
