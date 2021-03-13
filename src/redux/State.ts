@@ -42,21 +42,31 @@ export type StoreType = {
     _state: AppStateProps
     _onChageRender: (state: AppStateProps) => void
     subscribe: (callback: (store: AppStateProps) => void) => void
-    getState: ()=> AppStateProps
+    getState: () => AppStateProps
     dispatch: (action: AddPostActionType | UpdateNewPostTextActionType) => void
 }
 
-export type AddPostActionType = {
-    type: 'ADD-POST'
-    postText: string
-}
+type AddPostActionType = ReturnType<typeof addPostAC>
 
-type UpdateNewPostTextActionType = {
-    type: "UPDATE-NEW-POST-TEXT"
-    newText: string
-}
+type UpdateNewPostTextActionType = ReturnType<typeof updateNewPostTextAC>
 
 export type ActionsType = AddPostActionType | UpdateNewPostTextActionType
+
+
+export const addPostAC = (postText: string) => {
+    return {
+        type: 'ADD-POST',
+        postText: postText
+    } as const
+}
+
+export const updateNewPostTextAC = (newText: string) => {
+    return {
+        type: "UPDATE-NEW-POST-TEXT",
+        newText: newText
+    } as const
+}
+
 
 const store: StoreType = {
     _state: {
@@ -84,14 +94,14 @@ const store: StoreType = {
     _onChageRender(_state: AppStateProps) {
         console.log("State has just been changed")
     },
-    subscribe(callback){
+    subscribe(callback) {
         this._onChageRender = callback
     },
-    getState(){
+    getState() {
         return this._state
     },
-    dispatch(action: ActionsType){
-        if (action.type === 'ADD-POST'){
+    dispatch(action: ActionsType) {
+        if (action.type === 'ADD-POST') {
             const newPost: PostType = {
                 id: 5,
                 message: this._state.profilePage.newPostsText,
@@ -100,8 +110,7 @@ const store: StoreType = {
             this._state.profilePage.posts.push(newPost)
             this._state.profilePage.newPostsText = ""
             this._onChageRender(this._state)
-        }
-        else if (action.type === "UPDATE-NEW-POST-TEXT"){
+        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
             this._state.profilePage.newPostsText = action.newText
             this._onChageRender(this._state)
 
