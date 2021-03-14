@@ -31,6 +31,7 @@ type ProfilePageType = {
 type DialogPageType = {
     dialogs: Array<DialogType>
     messages: Array<MessageType>
+    newMessageBody: string
 }
 
 export type AppStateProps = {
@@ -43,14 +44,22 @@ export type StoreType = {
     _onChageRender: (state: AppStateProps) => void
     subscribe: (callback: (store: AppStateProps) => void) => void
     getState: () => AppStateProps
-    dispatch: (action: AddPostActionType | UpdateNewPostTextActionType) => void
+    dispatch: (action: ActionsType) => void
 }
 
 type AddPostActionType = ReturnType<typeof addPostAC>
 
 type UpdateNewPostTextActionType = ReturnType<typeof updateNewPostTextAC>
 
-export type ActionsType = AddPostActionType | UpdateNewPostTextActionType
+type UpdateNewMessageBodyActionType = ReturnType<typeof updateNewMessageBodyAC>
+
+type SendMessageActionType = ReturnType<typeof sendMessageAC>
+
+export type ActionsType =
+    AddPostActionType
+    | UpdateNewPostTextActionType
+    | UpdateNewMessageBodyActionType
+    | SendMessageActionType
 
 
 export const addPostAC = (postText: string) => {
@@ -64,6 +73,19 @@ export const updateNewPostTextAC = (newText: string) => {
     return {
         type: "UPDATE-NEW-POST-TEXT",
         newText: newText
+    } as const
+}
+
+export const updateNewMessageBodyAC = (body: string) => {
+    return {
+        type: "UPDATE-NEW-MESSAGE-BODY",
+        body: body
+    } as const
+}
+
+export const sendMessageAC = () => {
+    return {
+        type: "SEND-MESSAGE",
     } as const
 }
 
@@ -89,6 +111,7 @@ const store: StoreType = {
                     {id: 2, message: "Hi!"},
                     {id: 3, message: "Whatsup!"},
                     {id: 4, message: "Hey!"},],
+            newMessageBody: "",
         },
     },
     _onChageRender(_state: AppStateProps) {
@@ -114,9 +137,16 @@ const store: StoreType = {
             this._state.profilePage.newPostsText = action.newText
             this._onChageRender(this._state)
 
+        } else if (action.type === "UPDATE-NEW-MESSAGE-BODY") {
+            this._state.dialogPage.newMessageBody = action.body
+            this._onChageRender(this._state)
+        } else if (action.type === "SEND-MESSAGE") {
+            let body = this._state.dialogPage.newMessageBody
+            this._state.dialogPage.newMessageBody = ''
+            this._state.dialogPage.messages.push({id: 6, message: body})
+            this._onChageRender(this._state)
         }
     }
 }
-
 
 export default store
