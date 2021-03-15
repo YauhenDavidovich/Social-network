@@ -8,7 +8,7 @@ import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 
-import {AppStateProps, StoreType} from "./redux/State";
+import {StoreType} from "./redux/State";
 import Profile from "./components/Profile/Profile";
 
 
@@ -25,9 +25,8 @@ const App: React.FC<PropsType> = (props) => {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Route path={'/profile'} render={() => <Profile posts={state.profilePage.posts}
-                                                                    dispatch={props.store.dispatch.bind(props.store)}
                                                                     newPostsText={state.profilePage.newPostsText}
-                    />}/>
+                                                                    dispatch={props.store.dispatch.bind(props.store)}/>}/>
                     <Route path={'/dialogs'} render={() => <Dialogs dialogs={state.dialogPage.dialogs}
                                                                     messages={state.dialogPage.messages}
                                                                     newMessageBody={state.dialogPage.newMessageBody}

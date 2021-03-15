@@ -4,14 +4,14 @@ import DialogItem, {DialogItemProps} from "./DialogItem/DialogItem";
 import Message, {MessageItemProps} from "./Message/Message";
 import {ActionsType, sendMessageAC, updateNewMessageBodyAC} from "../../redux/State";
 
-type DialogsTypeProps = {
+type DialogsPropsType = {
     dialogs: Array<DialogItemProps>
     messages: Array<MessageItemProps>
     newMessageBody: string
     dispatch: (action: ActionsType) => void
 }
 
-const Dialogs: React.FC<DialogsTypeProps>= (props) => {
+const Dialogs: React.FC<DialogsPropsType>= (props) => {
     const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.currentTarget.value
         props.dispatch(updateNewMessageBodyAC(body))

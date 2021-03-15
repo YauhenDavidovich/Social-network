@@ -1,3 +1,7 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialog-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 let onChageRender: (state: AppStateProps) => void = () => {
     console.log("State has just been changed")
 }
@@ -22,21 +26,26 @@ type PostType = {
     likesCount: number
 }
 
-type ProfilePageType = {
-    posts: Array<PostType>
-    newPostsText: string
 
-}
-
-type DialogPageType = {
+export type DialogPageType = {
     dialogs: Array<DialogType>
     messages: Array<MessageType>
     newMessageBody: string
 }
 
+export type ProfilePageType = {
+    posts: Array<PostType>
+    newPostsText: string
+}
+
+
+export type SidebarType = {}
+
+
 export type AppStateProps = {
     profilePage: ProfilePageType
     dialogPage: DialogPageType
+    sidebar: SidebarType
 }
 
 export type StoreType = {
@@ -113,6 +122,7 @@ const store: StoreType = {
                     {id: 4, message: "Hey!"},],
             newMessageBody: "",
         },
+        sidebar: {},
     },
     _onChageRender(_state: AppStateProps) {
         console.log("State has just been changed")
@@ -124,28 +134,10 @@ const store: StoreType = {
         return this._state
     },
     dispatch(action: ActionsType) {
-        if (action.type === 'ADD-POST') {
-            const newPost: PostType = {
-                id: 5,
-                message: this._state.profilePage.newPostsText,
-                likesCount: 3
-            }
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostsText = ""
-            this._onChageRender(this._state)
-        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-            this._state.profilePage.newPostsText = action.newText
-            this._onChageRender(this._state)
-
-        } else if (action.type === "UPDATE-NEW-MESSAGE-BODY") {
-            this._state.dialogPage.newMessageBody = action.body
-            this._onChageRender(this._state)
-        } else if (action.type === "SEND-MESSAGE") {
-            let body = this._state.dialogPage.newMessageBody
-            this._state.dialogPage.newMessageBody = ''
-            this._state.dialogPage.messages.push({id: 6, message: body})
-            this._onChageRender(this._state)
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action)
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action)
+        this._onChageRender(this._state)
     }
 }
 

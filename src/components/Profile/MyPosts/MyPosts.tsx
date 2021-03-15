@@ -1,21 +1,17 @@
 import React, {ChangeEvent} from 'react';
 import style from './MyPosts.module.css'
 import Post from "./Post/Post";
-import {ActionsType, addPostAC, updateNewPostTextAC} from "../../../redux/State";
+import {ActionsType, addPostAC, ProfilePageType, updateNewPostTextAC} from "../../../redux/State";
+import {ProfilePropsType} from "../Profile";
 
 export type PostType = {
     id: number
     message: string
     likesCount: number
 }
-export type ProfilePageType = {
-    posts: Array<PostType>
-    newPostsText: string
-    dispatch: (action: ActionsType) => void
-}
 
 
-const MyPosts: React.FC<ProfilePageType> = (props) => {
+const MyPosts: React.FC<ProfilePropsType> = (props) => {
 
     let postElements = props.posts.map( p => <Post key = {p.id} message={p.message} likesCount={p.likesCount}/>)
 

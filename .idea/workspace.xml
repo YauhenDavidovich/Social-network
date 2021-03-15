@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/redux/dialog-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/State.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/State.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -41,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -55,6 +60,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\it-incubator\Social-network\src\redux" />
       <recent name="D:\it-incubator\Social-network\src\components\Profile\ProfileInfo" />
       <recent name="D:\it-incubator\Social-network\src\components\Settings" />
       <recent name="D:\it-incubator\Social-network\src\components\News" />
@@ -97,7 +103,8 @@
       <workItem from="1615311064522" duration="4322000" />
       <workItem from="1615476086868" duration="6794000" />
       <workItem from="1615628221733" duration="4009000" />
-      <workItem from="1615751600417" duration="4185000" />
+      <workItem from="1615751600417" duration="4268000" />
+      <workItem from="1615834939485" duration="5629000" />
     </task>
     <task id="LOCAL-00001" summary="init: start project">
       <created>1612729848665</created>
@@ -176,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615636532655</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: add send message functionality">
+      <created>1615755842935</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615755842935</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,14 +208,15 @@
     <MESSAGE value="feat: add adding posts on board" />
     <MESSAGE value="feat: add subscribe" />
     <MESSAGE value="feat: add action creator" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add action creator" />
+    <MESSAGE value="feat: add send message functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add send message functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/redux/State.ts</url>
-          <line>93</line>
+          <line>102</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
