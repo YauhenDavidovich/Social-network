@@ -8,15 +8,13 @@ import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 
-import {StoreType} from "./redux/State";
+import {ActionsType, AppStateProps, StoreType} from "./redux/State";
 import Profile from "./components/Profile/Profile";
+import {AppRootStateType} from "./redux/redux-store";
 
 
-export type PropsType = {
-    store: StoreType
-}
 
-const App: React.FC<PropsType> = (props) => {
+const App = (props: any) => {
     const state = props.store.getState()
     return (
         <BrowserRouter>
