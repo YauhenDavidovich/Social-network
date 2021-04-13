@@ -1,29 +1,28 @@
 import React, {ChangeEvent} from 'react';
 import style from './Diaologs.module.css'
-import DialogItem, {DialogItemProps} from "./DialogItem/DialogItem";
-import Message, {MessageItemProps} from "./Message/Message";
-import {ActionsType, sendMessageAC, updateNewMessageBodyAC} from "../../redux/State";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
-type DialogsPropsType = {
-    dialogs: Array<DialogItemProps>
-    messages: Array<MessageItemProps>
-    newMessageBody: string
-    dispatch: (action: ActionsType) => void
-}
 
-const Dialogs: React.FC<DialogsPropsType>= (props) => {
+// type DialogsPropsType = {
+//     dialogs: Array<DialogItemProps>
+//     messages: Array<MessageItemProps>
+//     newMessageBody: string
+//     dispatch: (action: ActionsType) => void
+// }
+
+const Dialogs = (props:any) => {
+    let state = props.dialogsPage
     const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.currentTarget.value
-        props.dispatch(updateNewMessageBodyAC(body))
+        props.updateNewMessageBody(body)
     }
     const onSendMessageClick = () => {
-        props.dispatch(sendMessageAC())
+        props.sendMessage()
     }
-    let newMessageBody = props.newMessageBody
-
-
-    let dialogElements = props.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>)
-    let messageElements = props.messages.map(m => <Message id={m.id} message={m.message}/>)
+    let newMessageBody = state.newMessageBody
+    let dialogElements = state.dialogs.map((d: { id: number; name: string; }) => <DialogItem id={d.id} name={d.name}/>)
+    let messageElements = state.messages.map((m: { id: number; message: string; }) => <Message id={m.id} message={m.message}/>)
 
     return (
         <div className={style.dialogs}>

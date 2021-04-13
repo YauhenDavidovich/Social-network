@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialog-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialog-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Dialogs" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -60,11 +59,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\it-incubator\Social-network\src\components\Dialogs" />
+      <recent name="D:\it-incubator\Social-network\src\components\Profile\MyPosts" />
       <recent name="D:\it-incubator\Social-network\src\redux" />
       <recent name="D:\it-incubator\Social-network\src\components\Profile\ProfileInfo" />
       <recent name="D:\it-incubator\Social-network\src\components\Settings" />
-      <recent name="D:\it-incubator\Social-network\src\components\News" />
-      <recent name="D:\it-incubator\Social-network\src\components\Music" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\it-incubator\Social-network\src\components\Dialogs" />
@@ -106,6 +105,10 @@
       <workItem from="1615751600417" duration="4268000" />
       <workItem from="1615834939485" duration="5806000" />
       <workItem from="1616439626086" duration="5521000" />
+      <workItem from="1616524359011" duration="2085000" />
+      <workItem from="1617194567024" duration="1225000" />
+      <workItem from="1617737839888" duration="4633000" />
+      <workItem from="1618323738856" duration="6094000" />
     </task>
     <task id="LOCAL-00001" summary="init: start project">
       <created>1612729848665</created>
@@ -227,6 +230,12 @@
           <url>file://$PROJECT_DIR$/src/redux/State.ts</url>
           <line>102</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx</url>
+          <line>13</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -2,7 +2,7 @@ import React, {ChangeEvent} from 'react';
 import style from './MyPosts.module.css'
 import Post from "./Post/Post";
 import {ActionsType, addPostAC, ProfilePageType, updateNewPostTextAC} from "../../../redux/State";
-import {ProfilePropsType} from "../Profile";
+
 
 export type PostType = {
     id: number
@@ -11,18 +11,16 @@ export type PostType = {
 }
 
 
-const MyPosts: React.FC<ProfilePropsType> = (props) => {
+export const MyPosts = (props:any) => {
 
-    let postElements = props.posts.map( p => <Post key = {p.id} message={p.message} likesCount={p.likesCount}/>)
+    let postElements = props.posts.map( (p:PostType) => <Post key = {p.id} message={p.message} likesCount={p.likesCount}/>)
 
-
-
-    let addPost = () => {
-        props.dispatch(addPostAC(props.newPostsText))
+    let onAddPost = () => {
+        props.addPost()
     }
 
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        props.dispatch(updateNewPostTextAC(e.currentTarget.value))
+        props.updateNewPostText(e.currentTarget.value)
     }
 
     return (
@@ -30,7 +28,7 @@ const MyPosts: React.FC<ProfilePropsType> = (props) => {
             <h3>My posts</h3>
             <div><textarea onChange={onPostChange} value={props.newPostsText}/></div>
             <div>
-                <button onClick={addPost}>Add post</button>
+                <button onClick={onAddPost}>Add post</button>
             </div>
             <div className={style.posts}>
                 { postElements }
@@ -39,4 +37,4 @@ const MyPosts: React.FC<ProfilePropsType> = (props) => {
     );
 };
 
-export default MyPosts;
+
