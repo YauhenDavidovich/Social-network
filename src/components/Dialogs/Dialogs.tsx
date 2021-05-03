@@ -12,7 +12,7 @@ import Message from "./Message/Message";
 // }
 
 const Dialogs = (props:any) => {
-    let state = props.dialogsPage
+    let state = props.dialogPage
     const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.currentTarget.value
         props.updateNewMessageBody(body)

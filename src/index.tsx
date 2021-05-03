@@ -5,15 +5,21 @@ import {AppStateProps, StoreType} from "./redux/State";
 import ReactDOM from "react-dom";
 import store, {AppRootStateType} from "./redux/redux-store";
 import App from "./App";
+import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
 
 
 export let renderEntireTrees = (props: AppRootStateType) => {
     ReactDOM.render(
-        <React.StrictMode>
-            <App store={store}/>
-        </React.StrictMode>
-        ,
-        document.getElementById('root')
+        <BrowserRouter>
+            <React.StrictMode>
+                <Provider store={store}>
+                    <App />
+                </Provider>
+
+            </React.StrictMode>
+        </BrowserRouter>
+        , document.getElementById('root')
     );
 }
 renderEntireTrees(store.getState())
