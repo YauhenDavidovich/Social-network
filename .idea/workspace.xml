@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialog-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialog-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +107,8 @@
       <workItem from="1618323738856" duration="6825000" />
       <workItem from="1619539376254" duration="599000" />
       <workItem from="1620058822357" duration="8121000" />
-      <workItem from="1620148053573" duration="5793000" />
+      <workItem from="1620148053573" duration="5959000" />
+      <workItem from="1620243495508" duration="3189000" />
     </task>
     <task id="LOCAL-00001" summary="init: start project">
       <created>1612729848665</created>
@@ -220,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620156860595</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: add deep copy of state for profile posts">
+      <created>1620160206270</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620160206270</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +252,8 @@
     <MESSAGE value="feat: wrap with container components" />
     <MESSAGE value="feat: add react-redux" />
     <MESSAGE value="feat: add missing typification" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add missing typification" />
+    <MESSAGE value="feat: add deep copy of state for profile posts" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add deep copy of state for profile posts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

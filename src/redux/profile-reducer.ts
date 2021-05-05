@@ -14,7 +14,7 @@ let initialState = {
             {id: 2, message: "Hey", likesCount: 14},
             {id: 3, message: "Good day!", likesCount: 24},
             {id: 4, message: "Yo!", likesCount: 5},] as Array<PostType>,
-    newPostsText: "",
+    newPostsText: "type yor post here",
 }
 
 export type PostsInitialStateType = typeof initialState
@@ -27,16 +27,14 @@ const profileReducer = (state: PostsInitialStateType = initialState, action: Act
                 message: state.newPostsText,
                 likesCount: 3
             }
-            let stateCopy = {...state};
-            stateCopy.posts = [...state.posts];
-            stateCopy.posts.push(newPost)
-            stateCopy.newPostsText = ""
-            return stateCopy
+            return {...state,
+                posts: [...state.posts, newPost],
+                newPostsText: ''
+            };
         }
         case 'UPDATE-NEW-POST-TEXT': {
-            let stateCopy = {...state}
-            stateCopy.newPostsText = action.newText
-            return stateCopy
+            return {...state,
+            newPostsText: action.newText}
         }
 
         default:
