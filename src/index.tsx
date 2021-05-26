@@ -1,9 +1,8 @@
 import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {AppStateProps, StoreType} from "./redux/State";
 import ReactDOM from "react-dom";
-import store, {AppRootStateType} from "./redux/redux-store";
+import store from "./redux/redux-store";
 import App from "./App";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
@@ -15,7 +14,6 @@ ReactDOM.render(
             <Provider store={store}>
                 <App/>
             </Provider>
-
         </React.StrictMode>
     </BrowserRouter>
     , document.getElementById('root')

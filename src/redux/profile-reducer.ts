@@ -8,7 +8,7 @@ type PostType = {
 }
 
 
-let initialState = {
+const initialState = {
     posts:
         [{id: 1, message: "Hi", likesCount: 4},
             {id: 2, message: "Hey", likesCount: 14},

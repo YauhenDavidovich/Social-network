@@ -1,6 +1,7 @@
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialog-reducer";
 import sidebarReducer from "./sidebar-reducer";
+import {followAC, setUsersAC, unfollowAC} from "./users-reducer";
 
 let onChageRender: (state: AppStateProps) => void = () => {
     console.log("State has just been changed")
@@ -64,11 +65,18 @@ type UpdateNewMessageBodyActionType = ReturnType<typeof updateNewMessageBodyAC>
 
 type SendMessageActionType = ReturnType<typeof sendMessageAC>
 
+type SetUsersActionType = ReturnType<typeof setUsersAC>
+type FollowUserActionType = ReturnType<typeof followAC>
+type UnFollowUserActionType = ReturnType<typeof unfollowAC>
+
 export type ActionsType =
     AddPostActionType
     | UpdateNewPostTextActionType
     | UpdateNewMessageBodyActionType
     | SendMessageActionType
+    | SetUsersActionType
+    | FollowUserActionType
+    | UnFollowUserActionType
 
 
 export const addPostAC = (postText: string) => {
