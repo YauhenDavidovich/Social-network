@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="feat: add users page">
-      <change afterPath="$PROJECT_DIR$/src/components/Users/Users.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
+    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/user-photo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/State.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/State.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
-        <option value="CSS File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -36,7 +22,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1oAGs7zihgwjphrsR4wu81WxVi9" />
+  <component name="ProjectId" id="1vtLa0XS6qo7ULTP9dH9NTUHGbY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -45,246 +31,56 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\it-incubator\Social-network\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\JS\social-network\Social-network\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\it-incubator\Social-network\src\redux" />
-      <recent name="D:\it-incubator\Social-network\src\components\Dialogs" />
-      <recent name="D:\it-incubator\Social-network\src\components\Profile\MyPosts" />
-      <recent name="D:\it-incubator\Social-network\src\components\Profile\ProfileInfo" />
-      <recent name="D:\it-incubator\Social-network\src\components\Settings" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\it-incubator\Social-network\src\components\Dialogs" />
-      <recent name="D:\it-incubator\Social-network\src\components\Profile\ProfileInfo" />
-      <recent name="D:\it-incubator\Social-network\src\components\Profile" />
-      <recent name="D:\it-incubator\Social-network\src\components\Navbar" />
-      <recent name="D:\it-incubator\Social-network\src\components\Header" />
+      <recent name="D:\JS\social-network\Social-network\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a409ead5-7ba4-41c4-b2a8-65643680b1d8" name="Default Changelist" comment="" />
-      <created>1612722185367</created>
+      <changelist id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="" />
+      <created>1627376509735</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1612722185367</updated>
-      <workItem from="1612722188075" duration="1061000" />
-      <workItem from="1612802842485" duration="671000" />
-      <workItem from="1612807576924" duration="5461000" />
-      <workItem from="1612975813412" duration="7735000" />
-      <workItem from="1613061299265" duration="4163000" />
-      <workItem from="1613293361483" duration="3521000" />
-      <workItem from="1613313608928" duration="4774000" />
-      <workItem from="1613407641394" duration="7545000" />
-      <workItem from="1613664221271" duration="4382000" />
-      <workItem from="1613750779648" duration="2816000" />
-      <workItem from="1613834402615" duration="6836000" />
-      <workItem from="1613911056598" duration="5155000" />
-      <workItem from="1614019692085" duration="6227000" />
-      <workItem from="1614268234666" duration="8382000" />
-      <workItem from="1614365158450" duration="2175000" />
-      <workItem from="1614524162711" duration="599000" />
-      <workItem from="1614616782061" duration="2898000" />
-      <workItem from="1615211577215" duration="3422000" />
-      <workItem from="1615311064522" duration="4322000" />
-      <workItem from="1615476086868" duration="6794000" />
-      <workItem from="1615628221733" duration="4009000" />
-      <workItem from="1615751600417" duration="4268000" />
-      <workItem from="1615834939485" duration="5806000" />
-      <workItem from="1616439626086" duration="5521000" />
-      <workItem from="1616524359011" duration="2085000" />
-      <workItem from="1617194567024" duration="1225000" />
-      <workItem from="1617737839888" duration="4633000" />
-      <workItem from="1618323738856" duration="6825000" />
-      <workItem from="1619539376254" duration="599000" />
-      <workItem from="1620058822357" duration="8121000" />
-      <workItem from="1620148053573" duration="5959000" />
-      <workItem from="1620243495508" duration="3492000" />
-      <workItem from="1620836076304" duration="623000" />
-      <workItem from="1621971265218" duration="3518000" />
-      <workItem from="1622023646785" duration="12789000" />
+      <updated>1627376509735</updated>
+      <workItem from="1627376520354" duration="7481000" />
     </task>
-    <task id="LOCAL-00001" summary="init: start project">
-      <created>1612729848665</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1612729848665</updated>
-    </task>
-    <task id="LOCAL-00002" summary="feat: add css modules">
-      <created>1612983900097</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1612983900097</updated>
-    </task>
-    <task id="LOCAL-00003" summary="feat: change directories structure">
-      <created>1612985804700</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1612985804700</updated>
-    </task>
-    <task id="LOCAL-00004" summary="feat: add routing">
-      <created>1613314390375</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1613314390375</updated>
-    </task>
-    <task id="LOCAL-00005" summary="feat: add dialogs page">
-      <created>1613412722330</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1613412722330</updated>
-    </task>
-    <task id="LOCAL-00006" summary="feat: add dialogs navlinks">
-      <created>1613413966169</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1613413966169</updated>
-    </task>
-    <task id="LOCAL-00007" summary="feat: put the data into the index.ts">
-      <created>1613854858975</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1613854858975</updated>
-    </task>
-    <task id="LOCAL-00008" summary="feat: pack the data into the state">
-      <created>1613923103761</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1613923103761</updated>
-    </task>
-    <task id="LOCAL-00009" summary="feat: add adding posts on board">
-      <created>1614277150789</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1614277150789</updated>
-    </task>
-    <task id="LOCAL-00010" summary="feat: add subscribe">
-      <created>1614367230321</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1614367230321</updated>
-    </task>
-    <task id="LOCAL-00011" summary="feat: add action creator">
-      <created>1615636532655</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1615636532655</updated>
-    </task>
-    <task id="LOCAL-00012" summary="feat: add send message functionality">
-      <created>1615755842935</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1615755842935</updated>
-    </task>
-    <task id="LOCAL-00013" summary="feat: add reducers">
-      <created>1615842455869</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1615842455869</updated>
-    </task>
-    <task id="LOCAL-00014" summary="feat: wrap with container components">
-      <created>1618343595449</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1618343595450</updated>
-    </task>
-    <task id="LOCAL-00015" summary="feat: add react-redux">
-      <created>1620065839136</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1620065839136</updated>
-    </task>
-    <task id="LOCAL-00016" summary="feat: add missing typification">
-      <created>1620156860595</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1620156860595</updated>
-    </task>
-    <task id="LOCAL-00017" summary="feat: add deep copy of state for profile posts">
-      <created>1620160206270</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1620160206270</updated>
-    </task>
-    <task id="LOCAL-00018" summary="feat: add deep copy of state for dialogs">
-      <created>1620246950992</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1620246950992</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init: start project" />
-    <MESSAGE value="feat: add css modules" />
-    <MESSAGE value="feat: change directories structure" />
-    <MESSAGE value="feat: add routing" />
-    <MESSAGE value="feat: add dialogs page" />
-    <MESSAGE value="feat: add dialogs navlinks" />
-    <MESSAGE value="feat: put the data into the index.ts" />
-    <MESSAGE value="feat: pack the data into the state" />
-    <MESSAGE value="feat: add adding posts on board" />
-    <MESSAGE value="feat: add subscribe" />
-    <MESSAGE value="feat: add action creator" />
-    <MESSAGE value="feat: add send message functionality" />
-    <MESSAGE value="feat: add reducers" />
-    <MESSAGE value="feat: wrap with container components" />
-    <MESSAGE value="feat: add react-redux" />
-    <MESSAGE value="feat: add missing typification" />
-    <MESSAGE value="feat: add deep copy of state for profile posts" />
-    <MESSAGE value="feat: add deep copy of state for dialogs" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add deep copy of state for dialogs" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/redux/State.ts</url>
-          <line>110</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx</url>
-          <line>13</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/components/Users/Users.tsx</url>
+          <line>41</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

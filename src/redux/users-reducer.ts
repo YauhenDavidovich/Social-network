@@ -2,11 +2,16 @@ import {ActionsType} from "./State";
 
 export type UserType = {
     id: number
-    photoUrl: string
+    photos: UserPhoto
     followed: boolean
-    fullName: string
+    name: string
     status: string
     location: UsersLocation
+}
+
+type UserPhoto = {
+    small: string
+    large: string
 }
 
 type UsersLocation = {
