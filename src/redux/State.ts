@@ -49,14 +49,6 @@ export type AppStateProps = {
     sidebar: SidebarType
 }
 
-export type StoreType = {
-    _state: AppStateProps
-    _onChageRender: (state: AppStateProps) => void
-    subscribe: (callback: (store: AppStateProps) => void) => void
-    getState: () => AppStateProps
-    dispatch: (action: ActionsType) => void
-}
-
 type AddPostActionType = ReturnType<typeof addPostAC>
 
 type UpdateNewPostTextActionType = ReturnType<typeof updateNewPostTextAC>
@@ -68,6 +60,9 @@ type SendMessageActionType = ReturnType<typeof sendMessageAC>
 type SetUsersActionType = ReturnType<typeof setUsersAC>
 type FollowUserActionType = ReturnType<typeof followAC>
 type UnFollowUserActionType = ReturnType<typeof unfollowAC>
+type SetCurrentPageActionType = ReturnType<typeof SetCurrentPageAC>
+type SetUsersTotalCountActionType = ReturnType<typeof SetUsersTotalCountAC>
+
 
 export type ActionsType =
     AddPostActionType
@@ -77,7 +72,21 @@ export type ActionsType =
     | SetUsersActionType
     | FollowUserActionType
     | UnFollowUserActionType
+    | SetCurrentPageActionType
+    | SetUsersTotalCountActionType
 
+export const SetCurrentPageAC = (currentPage: number) => {
+    return {
+        type: 'SET_CURRENT_PAGE',
+        currentPage: currentPage
+    } as const
+}
+export const SetUsersTotalCountAC = (totalUsersCount: number) => {
+    return {
+        type: 'SET_USERS_TOTAL_COUNT',
+        count: totalUsersCount
+    } as const
+}
 
 export const addPostAC = (postText: string) => {
     return {
@@ -107,46 +116,3 @@ export const sendMessageAC = () => {
 }
 
 
-const store: StoreType = {
-    _state: {
-        profilePage: {
-            posts:
-                [{id: 1, message: "Hi", likesCount: 4},
-                    {id: 2, message: "Hey", likesCount: 14},
-                    {id: 3, message: "Good day!", likesCount: 24},
-                    {id: 4, message: "Yo!", likesCount: 5},],
-            newPostsText: "",
-        },
-        dialogPage: {
-            dialogs:
-                [{id: 1, name: "Peter"},
-                    {id: 2, name: "Olga"},
-                    {id: 3, name: "Jack"},
-                    {id: 4, name: "Tomas"},],
-            messages:
-                [{id: 1, message: "Hi!"},
-                    {id: 2, message: "Hi!"},
-                    {id: 3, message: "Whatsup!"},
-                    {id: 4, message: "Hey!"},],
-            newMessageBody: "",
-        },
-        sidebar: {},
-    },
-    _onChageRender(_state: AppStateProps) {
-        console.log("State has just been changed")
-    },
-    subscribe(callback) {
-        this._onChageRender = callback
-    },
-    getState() {
-        return this._state
-    },
-    dispatch(action: ActionsType) {
-        this._state.profilePage = profileReducer(this._state.profilePage, action)
-        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action)
-        this._state.sidebar = sidebarReducer(this._state.sidebar, action)
-        this._onChageRender(this._state)
-    }
-}
-
-export default store
