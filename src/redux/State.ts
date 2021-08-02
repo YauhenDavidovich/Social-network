@@ -60,8 +60,9 @@ type SendMessageActionType = ReturnType<typeof sendMessageAC>
 type SetUsersActionType = ReturnType<typeof setUsersAC>
 type FollowUserActionType = ReturnType<typeof followAC>
 type UnFollowUserActionType = ReturnType<typeof unfollowAC>
-type SetCurrentPageActionType = ReturnType<typeof SetCurrentPageAC>
-type SetUsersTotalCountActionType = ReturnType<typeof SetUsersTotalCountAC>
+type SetCurrentPageActionType = ReturnType<typeof setCurrentPageAC>
+type SetUsersTotalCountActionType = ReturnType<typeof setUsersTotalCountAC>
+type ToggleIsFetchingActionType = ReturnType<typeof toggleIsFetchingAC>
 
 
 export type ActionsType =
@@ -74,14 +75,20 @@ export type ActionsType =
     | UnFollowUserActionType
     | SetCurrentPageActionType
     | SetUsersTotalCountActionType
+    | ToggleIsFetchingActionType
 
-export const SetCurrentPageAC = (currentPage: number) => {
+export const toggleIsFetchingAC = (isFetching: boolean) => ({
+    type: "TOGGLE_IS_FETCHING",
+    isFetching: isFetching
+}) as const
+
+export const setCurrentPageAC = (currentPage: number) => {
     return {
         type: 'SET_CURRENT_PAGE',
         currentPage: currentPage
     } as const
 }
-export const SetUsersTotalCountAC = (totalUsersCount: number) => {
+export const setUsersTotalCountAC = (totalUsersCount: number) => {
     return {
         type: 'SET_USERS_TOTAL_COUNT',
         count: totalUsersCount
