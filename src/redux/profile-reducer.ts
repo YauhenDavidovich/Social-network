@@ -1,5 +1,5 @@
-import {ActionsType, ProfilePageType} from "./State";
-import {DialogType} from "./dialog-reducer";
+import {ActionsType} from "./redux-store";
+
 
 type PostType = {
     id: number
@@ -40,6 +40,20 @@ const profileReducer = (state: PostsInitialStateType = initialState, action: Act
         default:
             return state
     }
+}
+
+export const addPostAC = (postText: string) => {
+    return {
+        type: 'ADD-POST',
+        postText: postText
+    } as const
+}
+
+export const updateNewPostTextAC = (newText: string) => {
+    return {
+        type: "UPDATE-NEW-POST-TEXT",
+        newText: newText
+    } as const
 }
 
 export default profileReducer

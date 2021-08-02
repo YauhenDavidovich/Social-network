@@ -1,4 +1,5 @@
-import {ActionsType, DialogPageType} from "./State";
+import {ActionsType} from "./redux-store";
+
 
 export type DialogType = {
     id: number
@@ -44,5 +45,19 @@ const dialogsReducer = (state: DialogInitialStateType = initialState, action: Ac
             return state
     }
 }
+
+export const updateNewMessageBodyAC = (body: string) => {
+    return {
+        type: "UPDATE-NEW-MESSAGE-BODY",
+        body: body
+    } as const
+}
+
+export const sendMessageAC = () => {
+    return {
+        type: "SEND-MESSAGE",
+    } as const
+}
+
 
 export default dialogsReducer

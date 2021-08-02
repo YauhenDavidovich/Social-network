@@ -1,4 +1,5 @@
-import {ActionsType} from "./State";
+import {ActionsType} from "./redux-store";
+
 
 export type UserType = {
     id: number
@@ -85,12 +86,20 @@ const usersReducer = (state: UsersInitialStateType = initialState, action: Actio
     }
 }
 
-export const followAC = (userID: number) => ({type: "FOLLOW", userID}) as const
-export const unfollowAC = (userID: number) => ({type: "UNFOLLOW", userID}) as const
-export const setUsersAC = (users: Array<UserType>) => ({type: "SET_USERS", users}) as const
-export const setCurrentPageAC = (currentPage: number) => ({type: "SET_CURRENT_PAGE", currentPage}) as const
+export const follow = (userID: number) => ({type: "FOLLOW", userID}) as const
+export const unfollow = (userID: number) => ({type: "UNFOLLOW", userID}) as const
+export const setUsers = (users: Array<UserType>) => ({type: "SET_USERS", users}) as const
+export const setCurrentPage = (currentPage: number) => ({
+    type: 'SET_CURRENT_PAGE', currentPage: currentPage
+}) as const
 
+export const setTotalUsersCount = (totalUsersCount: number) => ({
+    type: 'SET_USERS_TOTAL_COUNT', count: totalUsersCount
+}) as const
 
-
+export const toggleIsFetching = (isFetching: boolean) => ({
+    type: "TOGGLE_IS_FETCHING",
+    isFetching: isFetching
+}) as const
 
 export default usersReducer

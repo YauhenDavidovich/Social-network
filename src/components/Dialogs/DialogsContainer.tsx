@@ -1,11 +1,11 @@
 import React, {ChangeEvent} from 'react';
 import style from './Diaologs.module.css'
-import {sendMessageAC, updateNewMessageBodyAC} from "../../redux/State";
+
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
 import {AppRootStateType} from "../../redux/redux-store";
-import {DialogInitialStateType} from "../../redux/dialog-reducer";
+import {DialogInitialStateType, sendMessageAC, updateNewMessageBodyAC} from "../../redux/dialog-reducer";
 
 type MapStatePropsType = {
     dialogPage: DialogInitialStateType
