@@ -1,5 +1,5 @@
 import {combineReducers, createStore} from "redux";
-import profileReducer, {addPostAC, updateNewPostTextAC} from "./profile-reducer";
+import profileReducer, {addPostAC, setUserProfile, updateNewPostTextAC} from "./profile-reducer";
 import dialogsReducer, {sendMessageAC, updateNewMessageBodyAC} from "./dialog-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import usersReducer, {
@@ -22,6 +22,8 @@ type UnFollowUserActionType = ReturnType<typeof unfollow>
 type SetCurrentPageActionType = ReturnType<typeof setCurrentPage>
 type SetUsersTotalCountActionType = ReturnType<typeof setTotalUsersCount>
 type ToggleIsFetchingActionType = ReturnType<typeof toggleIsFetching>
+type SetUserProfileActionType = ReturnType<typeof setUserProfile>
+
 
 export type ActionsType =
     AddPostActionType
@@ -34,6 +36,7 @@ export type ActionsType =
     | SetCurrentPageActionType
     | SetUsersTotalCountActionType
     | ToggleIsFetchingActionType
+    | SetUserProfileActionType
 
 
 
@@ -49,5 +52,7 @@ const rootReducer = combineReducers({
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
 let store = createStore(rootReducer);
+// @ts-ignore
+window.store = store
 export default store
 

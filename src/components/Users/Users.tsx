@@ -1,8 +1,8 @@
 import React from "react";
 import styles from './Users.module.css';
-import {UsersType} from "./UsersContainer";
-import axios from "axios";
 import userPhoto from "../../assets/user-photo.png";
+import {NavLink} from "react-router-dom";
+
 
 const Users = (props: any) => {
 
@@ -29,7 +29,7 @@ const Users = (props: any) => {
                 <div key={u.id}>
 
                  <span>
-                     <div><img src={u.photos.small !== null ? u.photos.small : userPhoto} className={styles.userPhoto}/></div>
+                     <NavLink to={'/profile/2'}><img src={u.photos.small !== null ? u.photos.small : userPhoto} className={styles.userPhoto}/></NavLink>
                      <div>{u.id}</div>
                      <div>{
                          u.followed
