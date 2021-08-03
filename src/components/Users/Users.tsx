@@ -29,7 +29,7 @@ const Users = (props: any) => {
                 <div key={u.id}>
 
                  <span>
-                     <NavLink to={'/profile/2'}><img src={u.photos.small !== null ? u.photos.small : userPhoto} className={styles.userPhoto}/></NavLink>
+                     <NavLink to={`/profile/${u.id}`}><img src={u.photos.small !== null ? u.photos.small : userPhoto} className={styles.userPhoto}/></NavLink>
                      <div>{u.id}</div>
                      <div>{
                          u.followed
