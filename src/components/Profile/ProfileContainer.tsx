@@ -22,6 +22,9 @@ type PropsType = RouteComponentProps<PathParamsType> & OwnPropsType
 function ProfileContainer(props: PropsType) {
     useEffect(() => {
         let userId = props.match.params.usrID
+        if(!userId) {
+            userId = '15441'
+        }
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`).then(response => {
             props.setUserProfile(response.data)
         });
