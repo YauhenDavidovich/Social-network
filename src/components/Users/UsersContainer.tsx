@@ -1,6 +1,5 @@
 import React from "react";
 import {AppRootStateType} from "../../redux/redux-store";
-import {Dispatch} from "redux";
 import {connect} from "react-redux";
 import Users from "./Users";
 import {
@@ -13,12 +12,11 @@ import {
     UsersInitialStateType,
     UserType
 } from "../../redux/users-reducer";
-
 import axios from "axios";
 import styles from "./Users.module.css";
-import userPhoto from "../../assets/user-photo.png";
 import Preloader from "../common/Preloader/Preloader";
-import preloader from '../../assets/bars.svg'
+import {api} from "../../api/api";
+
 
 type MapStatePropsType = {
     usersPage: UsersInitialStateType,
@@ -40,19 +38,13 @@ type MapDispatchPropsType = {
 export type UsersType = MapStatePropsType & MapDispatchPropsType
 
 
-class UsersContainer extends React.Component<any, any> {
+class UsersContainer extends React.Component<UsersType> {
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,
-            {
-                withCredentials: true,
-                headers: {
-                    'API-KEY': '7182e7e1-cf7b-49da-8e89-52ae747000d8'
-                }
-            }).then(response => {
+        api.getUsers(this.props.currentPage, this.props.pageSize).then(data=> {
             this.props.toggleIsFetching(false)
-            this.props.setUsers(response.data.items);
-            this.props.setTotalUsersCount(response.data.totalCount)
+            this.props.setUsers(data.items);
+            this.props.setTotalUsersCount(data.totalCount)
         })
     }
 
@@ -60,15 +52,9 @@ class UsersContainer extends React.Component<any, any> {
         this.props.setCurrentPage(pageNumber);
         this.props.toggleIsFetching(true)
         debugger
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`,
-            {
-                withCredentials: true,
-                headers: {
-                    'API-KEY': '7182e7e1-cf7b-49da-8e89-52ae747000d8'
-                }
-            }).then(response => {
+        api.getUsers(pageNumber, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false)
-            this.props.setUsers(response.data.items)
+            this.props.setUsers(data.items)
         })
     }
 
@@ -98,29 +84,6 @@ let mapStateToProps = (state: AppRootStateType): MapStatePropsType => {
         isFetching: state.users.isFetching
     }
 }
-
-// let mapDispatchToProps = (dispatch: Dispatch): MapDispatchPropsType => {
-//     return {
-//         follow: (userID: number) => {
-//             dispatch(followAC(userID))
-//         },
-//         unfollow: (userID: number) => {
-//             dispatch(unfollowAC(userID))
-//         },
-//         setUsers: (users: Array<UserType>) => {
-//             dispatch(setUsersAC(users))
-//         },
-//         setCurrentPage: (pageNumber: number) => {
-//             dispatch(setCurrentPageAC(pageNumber))
-//         },
-//         setTotalUsersCount: (totalCount: number) => {
-//             dispatch(setUsersTotalCountAC(totalCount))
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching))
-//         }
-//     }
-// }
 
 export default connect(mapStateToProps, {
     follow,
