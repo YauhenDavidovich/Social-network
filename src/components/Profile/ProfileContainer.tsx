@@ -4,6 +4,7 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {setUserProfile} from "../../redux/profile-reducer";
 import {RouteComponentProps, withRouter} from "react-router-dom";
+import {api} from "../../api/api";
 
 type MapStatePropsType = {
     profile: any
@@ -25,8 +26,8 @@ function ProfileContainer(props: PropsType) {
         if(!userId) {
             userId = '15441'
         }
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`).then(response => {
-            props.setUserProfile(response.data)
+        api.getProfile(userId).then(data => {
+            props.setUserProfile(data)
         });
     }, [])
 

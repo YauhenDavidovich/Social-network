@@ -13,6 +13,26 @@ export const api = {
         return instance.get(`/users?page=${pageNumber}&count=${pageSize}`).then(response => {
             return response.data
         })
+    },
+    checkAuth(){
+        return instance.get(`/auth/me`).then(response => {
+            return response.data
+        })
+    },
+    getProfile(userId:string){
+        return instance.get(`profile/${userId}`).then(response => {
+            return response.data
+        })
+    },
+    follow(id: string | null | undefined){
+        return instance.post(`follow/${id}`, {}).then(response => {
+            return response.data
+        })
+    },
+    unfollow(id: string | null | undefined){
+        return instance.delete(`follow/${id}`).then(response => {
+            return response.data
+        })
     }
 }
 

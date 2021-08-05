@@ -12,7 +12,6 @@ import {
     UsersInitialStateType,
     UserType
 } from "../../redux/users-reducer";
-import axios from "axios";
 import styles from "./Users.module.css";
 import Preloader from "../common/Preloader/Preloader";
 import {api} from "../../api/api";
@@ -41,7 +40,7 @@ export type UsersType = MapStatePropsType & MapDispatchPropsType
 class UsersContainer extends React.Component<UsersType> {
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        api.getUsers(this.props.currentPage, this.props.pageSize).then(data=> {
+        api.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false)
             this.props.setUsers(data.items);
             this.props.setTotalUsersCount(data.totalCount)
