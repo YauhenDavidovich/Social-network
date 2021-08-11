@@ -3,12 +3,12 @@ import profileReducer, {addPostAC, setUserProfile, updateNewPostTextAC} from "./
 import dialogsReducer, {sendMessageAC, updateNewMessageBodyAC} from "./dialog-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import usersReducer, {
-    follow,
+    follow, followSuccess,
     setCurrentPage,
     setTotalUsersCount,
     setUsers, toggleFollowingInProgress,
     toggleIsFetching,
-    unfollow
+    unfollow, unfollowSuccess
 } from "./users-reducer";
 import authReducer, {setAuthUserData} from "./auth-reducer";
 import thunkMiddleware from "redux-thunk"
@@ -19,14 +19,15 @@ type UpdateNewPostTextActionType = ReturnType<typeof updateNewPostTextAC>
 type UpdateNewMessageBodyActionType = ReturnType<typeof updateNewMessageBodyAC>
 type SendMessageActionType = ReturnType<typeof sendMessageAC>
 type SetUsersActionType = ReturnType<typeof setUsers>
-type FollowUserActionType = ReturnType<typeof follow>
-type UnFollowUserActionType = ReturnType<typeof unfollow>
+type FollowUserActionType = ReturnType<typeof followSuccess>
+type UnFollowUserActionType = ReturnType<typeof unfollowSuccess>
 type SetCurrentPageActionType = ReturnType<typeof setCurrentPage>
 type SetUsersTotalCountActionType = ReturnType<typeof setTotalUsersCount>
 type ToggleIsFetchingActionType = ReturnType<typeof toggleIsFetching>
 type SetUserProfileActionType = ReturnType<typeof setUserProfile>
 type SetUserDataActionType = ReturnType<typeof setAuthUserData>
 type ToggleIsFollowingInProgressActionType = ReturnType<typeof toggleFollowingInProgress>
+
 
 
 export type ActionsType =

@@ -1,12 +1,14 @@
 import {ActionsType} from "./redux-store";
 import {api} from "../api/api";
+import {Dispatch} from "redux";
+
 const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING";
 const TOGGLE_FOLLOWING_IN_PROGRESS = "TOGGLE-FOLLOWING-IN-PROGRESS";
 const SET_USERS = "SET-USERS";
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
-const SET_USERS_TOTAL_COUNT  = "SET-USERS-TOTAL-COUNT";
+const SET_USERS_TOTAL_COUNT = "SET-USERS-TOTAL-COUNT";
 
 
 export type UserType = {
@@ -35,6 +37,7 @@ export type UsersInitialStateType = {
     currentPage: number,
     isFetching: boolean,
     followingInProgress: Array<string | number>
+
 }
 
 
@@ -103,8 +106,8 @@ const usersReducer = (state: UsersInitialStateType = initialState, action: Actio
     }
 }
 
-export const follow = (userID: number) => ({type: "FOLLOW", userID}) as const
-export const unfollow = (userID: number) => ({type: "UNFOLLOW", userID}) as const
+export const followSuccess = (userID: number) => ({type: "FOLLOW", userID}) as const
+export const unfollowSuccess = (userID: number) => ({type: "UNFOLLOW", userID}) as const
 export const setUsers = (users: Array<UserType>) => ({type: SET_USERS, users}) as const
 export const setCurrentPage = (currentPage: number) => ({
     type: SET_CURRENT_PAGE, currentPage: currentPage
@@ -118,14 +121,14 @@ export const toggleIsFetching = (isFetching: boolean) => ({
     type: TOGGLE_IS_FETCHING,
     isFetching
 }) as const
-export const toggleFollowingInProgress = (isFetching: boolean,  userId: string | number) => ({
+export const toggleFollowingInProgress = (isFetching: boolean, userId: string | number) => ({
     type: TOGGLE_FOLLOWING_IN_PROGRESS,
     isFetching,
     userId
 }) as const
 
-export const getUsers = (currentPage:number, pageSize:number) => {
-    return (dispatch:any)=> {
+export const getUsers = (currentPage: number, pageSize: number) => {
+    return (dispatch: any) => {
         dispatch(toggleIsFetching(true))
         api.getUsers(currentPage, pageSize).then(data => {
             dispatch(toggleIsFetching(false))
@@ -133,7 +136,33 @@ export const getUsers = (currentPage:number, pageSize:number) => {
             dispatch(setTotalUsersCount(data.totalCount))
         })
     }
-
 }
 
+
+export const follow = (userId: number) => {
+    return (dispatch:Dispatch<ActionsType>) => {
+        dispatch(toggleFollowingInProgress(true, userId));
+        api.follow(userId).
+        then(data => {
+            if (data.resultCode === 0) {
+                dispatch(followSuccess(userId))
+            }
+            dispatch(toggleFollowingInProgress(false, userId))
+        })
+    }
+}
+
+
+export const unfollow =(userId: number) => {
+
+    return (dispatch:Dispatch<ActionsType>) => {
+        dispatch(toggleFollowingInProgress(true, userId));
+        api.unfollow(userId).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(unfollowSuccess(userId))
+            }
+            dispatch(toggleFollowingInProgress(false, userId))
+        })
+    }
+}
 export default usersReducer

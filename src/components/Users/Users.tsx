@@ -25,7 +25,7 @@ const Users = (props: any) => {
 
         </div>
         {
-            props.usersPage.users.map((u: { id: string | number| null | undefined; photos: { small: string | null | undefined; }; followed: any; name: React.ReactNode; status: React.ReactNode; }) =>
+            props.usersPage.users.map((u: { id: string | number | null | undefined; photos: { small: string | null | undefined; }; followed: any; name: React.ReactNode; status: React.ReactNode; }) =>
 
                 <div key={u.id}>
 
@@ -39,26 +39,14 @@ const Users = (props: any) => {
                              ? <button disabled={
                                  props.followingInProgress.some((id: string | number) => id === u.id)}
                                        onClick={() => {
-                                           props.toggleFollowingInProgress(true)
-                                           api.unfollow(u.id).then(data => {
-                                               if (data.resultCode === 0) {
-                                                   props.unfollow(u.id)
-                                               }
-                                               props.toggleFollowingInProgress(false, u.id)
-                                           })
-
+                                           {
+                                               props.unfollow(u.id)
+                                           }
                                        }}>Unfollow</button>
                              : <button
                                  disabled={props.followingInProgress.some((id: string | number) => id === u.id)}
                                  onClick={() => {
-                                     console.log(props.followingInProgress)
-                                     props.toggleFollowingInProgress(true)
-                                     api.follow(u.id).then(data => {
-                                         if (data.resultCode === 0) {
-                                             props.follow(u.id)
-                                         }
-                                         props.toggleFollowingInProgress(false, u.id)
-                                     })
+                                     {props.follow(u.id)}
                                  }}>Follow</button>
                      }</div>
                  </span>

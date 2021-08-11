@@ -3,14 +3,13 @@ import {AppRootStateType} from "../../redux/redux-store";
 import {connect} from "react-redux";
 import Users from "./Users";
 import {
-    follow,
     setCurrentPage,
     setUsers,
-    unfollow,
+    unfollowSuccess,
     setTotalUsersCount,
     toggleIsFetching,
     UsersInitialStateType,
-    UserType, toggleFollowingInProgress, getUsers
+    UserType, toggleFollowingInProgress, getUsers, followSuccess, follow, unfollow
 } from "../../redux/users-reducer";
 import styles from "./Users.module.css";
 import Preloader from "../common/Preloader/Preloader";
@@ -27,7 +26,7 @@ type MapStatePropsType = {
 }
 
 type MapDispatchPropsType = {
-    follow: (userID: number) => void,
+    follow: (userID: number) => void
     unfollow: (userID: number) => void
     setUsers: (users: Array<UserType>) => void
     setCurrentPage: (currentPage: number) => void
@@ -35,6 +34,7 @@ type MapDispatchPropsType = {
     toggleIsFetching: (isFetching: boolean) => void
     toggleFollowingInProgress: (isFetching: boolean, userId: string | number)=> void
     getUsers: (currentPage: number, pageSize: number) => void
+
 
 }
 
