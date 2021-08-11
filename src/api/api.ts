@@ -24,12 +24,12 @@ export const api = {
             return response.data
         })
     },
-    follow(id: string | null | undefined){
+    follow(id: string | number | null | undefined){
         return instance.post(`follow/${id}`, {}).then(response => {
             return response.data
         })
     },
-    unfollow(id: string | null | undefined){
+    unfollow(id: string | number | null | undefined){
         return instance.delete(`follow/${id}`).then(response => {
             return response.data
         })

@@ -12,7 +12,7 @@ const Users = (props: any) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
-
+    debugger
     return <div>
         <div>
             {pages.map(p => {
@@ -25,7 +25,7 @@ const Users = (props: any) => {
 
         </div>
         {
-            props.usersPage.users.map((u: { id: string | null | undefined; photos: { small: string | null | undefined; }; followed: any; name: React.ReactNode; status: React.ReactNode; }) =>
+            props.usersPage.users.map((u: { id: string | number| null | undefined; photos: { small: string | null | undefined; }; followed: any; name: React.ReactNode; status: React.ReactNode; }) =>
 
                 <div key={u.id}>
 
@@ -35,21 +35,31 @@ const Users = (props: any) => {
                      <div>{u.id}</div>
                      <div>{
                          u.followed
-                             ? <button onClick={() => {
-                                 api.unfollow(u.id).then(data => {
-                                     if (data.resultCode === 0) {
-                                         props.unfollow(u.id)
-                                     }
-                                 })
 
-                             }}>Unfollow</button>
-                             : <button onClick={() => {
-                                 api.follow(u.id).then(data => {
-                                     if (data.resultCode === 0) {
-                                         props.follow(u.id)
-                                     }
-                                 })
-                             }}>Follow</button>
+                             ? <button disabled={
+                                 props.followingInProgress.some((id: string | number) => id === u.id)}
+                                       onClick={() => {
+                                           props.toggleFollowingInProgress(true)
+                                           api.unfollow(u.id).then(data => {
+                                               if (data.resultCode === 0) {
+                                                   props.unfollow(u.id)
+                                               }
+                                               props.toggleFollowingInProgress(false, u.id)
+                                           })
+
+                                       }}>Unfollow</button>
+                             : <button
+                                 disabled={props.followingInProgress.some((id: string | number) => id === u.id)}
+                                 onClick={() => {
+                                     console.log(props.followingInProgress)
+                                     props.toggleFollowingInProgress(true)
+                                     api.follow(u.id).then(data => {
+                                         if (data.resultCode === 0) {
+                                             props.follow(u.id)
+                                         }
+                                         props.toggleFollowingInProgress(false, u.id)
+                                     })
+                                 }}>Follow</button>
                      }</div>
                  </span>
                     <span>

@@ -1,4 +1,12 @@
 import {ActionsType} from "./redux-store";
+import {api} from "../api/api";
+const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING";
+const TOGGLE_FOLLOWING_IN_PROGRESS = "TOGGLE-FOLLOWING-IN-PROGRESS";
+const SET_USERS = "SET-USERS";
+const FOLLOW = "FOLLOW";
+const UNFOLLOW = "UNFOLLOW";
+const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
+const SET_USERS_TOTAL_COUNT  = "SET-USERS-TOTAL-COUNT";
 
 
 export type UserType = {
@@ -25,7 +33,8 @@ export type UsersInitialStateType = {
     pageSize: number,
     totalUsersCount: number,
     currentPage: number,
-    isFetching: boolean
+    isFetching: boolean,
+    followingInProgress: Array<string | number>
 }
 
 
@@ -34,12 +43,13 @@ const initialState: UsersInitialStateType = {
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
-    isFetching: false
+    isFetching: false,
+    followingInProgress: []
 }
 
 const usersReducer = (state: UsersInitialStateType = initialState, action: ActionsType): UsersInitialStateType => {
     switch (action.type) {
-        case "FOLLOW" :
+        case FOLLOW :
             return {
                 ...state,
                 users: state.users.map(u => {
@@ -50,7 +60,7 @@ const usersReducer = (state: UsersInitialStateType = initialState, action: Actio
                 })
             }
 
-        case "UNFOLLOW" :
+        case UNFOLLOW :
             return {
                 ...state,
                 users: state.users.map(u => {
@@ -61,25 +71,32 @@ const usersReducer = (state: UsersInitialStateType = initialState, action: Actio
                 })
             }
 
-        case "SET_USERS" :
+        case SET_USERS :
             return {
                 ...state,
                 users: [...action.users]
             }
-        case "SET_CURRENT_PAGE" :
+        case SET_CURRENT_PAGE :
             return {
                 ...state,
                 currentPage: action.currentPage
             }
-        case "SET_USERS_TOTAL_COUNT" :
+        case SET_USERS_TOTAL_COUNT :
             return {
                 ...state,
                 totalUsersCount: action.count
             }
-        case "TOGGLE_IS_FETCHING" :
+        case TOGGLE_IS_FETCHING :
             return {
                 ...state,
                 isFetching: action.isFetching
+            }
+        case TOGGLE_FOLLOWING_IN_PROGRESS :
+            return {
+                ...state,
+                followingInProgress: action.isFetching
+                    ? [...state.followingInProgress, action.userId]
+                    : state.followingInProgress.filter(id => id !== action.userId)
             }
         default:
             return state
@@ -88,18 +105,35 @@ const usersReducer = (state: UsersInitialStateType = initialState, action: Actio
 
 export const follow = (userID: number) => ({type: "FOLLOW", userID}) as const
 export const unfollow = (userID: number) => ({type: "UNFOLLOW", userID}) as const
-export const setUsers = (users: Array<UserType>) => ({type: "SET_USERS", users}) as const
+export const setUsers = (users: Array<UserType>) => ({type: SET_USERS, users}) as const
 export const setCurrentPage = (currentPage: number) => ({
-    type: 'SET_CURRENT_PAGE', currentPage: currentPage
+    type: SET_CURRENT_PAGE, currentPage: currentPage
 }) as const
 
 export const setTotalUsersCount = (totalUsersCount: number) => ({
-    type: 'SET_USERS_TOTAL_COUNT', count: totalUsersCount
+    type: SET_USERS_TOTAL_COUNT, count: totalUsersCount
 }) as const
 
 export const toggleIsFetching = (isFetching: boolean) => ({
-    type: "TOGGLE_IS_FETCHING",
-    isFetching: isFetching
+    type: TOGGLE_IS_FETCHING,
+    isFetching
 }) as const
+export const toggleFollowingInProgress = (isFetching: boolean,  userId: string | number) => ({
+    type: TOGGLE_FOLLOWING_IN_PROGRESS,
+    isFetching,
+    userId
+}) as const
+
+export const getUsers = (currentPage:number, pageSize:number) => {
+    return (dispatch:any)=> {
+        dispatch(toggleIsFetching(true))
+        api.getUsers(currentPage, pageSize).then(data => {
+            dispatch(toggleIsFetching(false))
+            dispatch(setUsers(data.items))
+            dispatch(setTotalUsersCount(data.totalCount))
+        })
+    }
+
+}
 
 export default usersReducer

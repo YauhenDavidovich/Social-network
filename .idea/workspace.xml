@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="feat: add DAL">
+    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="feat: add api methods to DAL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,9 @@
       <workItem from="1627376520354" duration="24598000" />
       <workItem from="1627568847208" duration="47000" />
       <workItem from="1627676552832" duration="3007000" />
-      <workItem from="1627901974308" duration="31237000" />
+      <workItem from="1627901974308" duration="38937000" />
+      <workItem from="1628579883571" duration="606000" />
+      <workItem from="1628671728993" duration="1743000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add users api">
       <created>1627399109047</created>
@@ -174,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628154464475</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: add api methods to DAL">
+      <created>1628157996909</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1628157996909</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,14 +216,15 @@
     <MESSAGE value="feat: add auth/me" />
     <MESSAGE value="feat: add follow/unfollow api" />
     <MESSAGE value="feat: add DAL" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add DAL" />
+    <MESSAGE value="feat: add api methods to DAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add api methods to DAL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/Users/UsersContainer.tsx</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
