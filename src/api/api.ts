@@ -8,6 +8,33 @@ const instance = axios.create({
     }
 })
 
+export type ContactsType = {
+    facebook?: string
+    website?: string
+    vk?: string
+    twitter?: string
+    instagram?: string
+    youtube?: string
+    github?: string
+    mainLink?: string
+}
+
+export type PhotosType = {
+    small: string
+    large: string
+}
+
+export type ProfileResponseType ={
+    userId: number
+    fullName: string
+    aboutMe: string
+    contacts: ContactsType
+    lookingForAJob: boolean
+    lookingForAJobDescription: string
+    photos: PhotosType
+
+}
+
 export const api = {
     getUsers(pageNumber = 1, pageSize = 10) {
         return instance.get(`/users?page=${pageNumber}&count=${pageSize}`).then(response => {
@@ -20,16 +47,16 @@ export const api = {
         })
     },
     getProfile(userId:string){
-        return instance.get(`profile/${userId}`).then(response => {
+        return instance.get<ProfileResponseType>(`profile/${userId}`).then(response => {
             return response.data
         })
     },
-    follow(id: string | number | null | undefined){
+    follow(id:number){
         return instance.post(`follow/${id}`, {}).then(response => {
             return response.data
         })
     },
-    unfollow(id: string | number | null | undefined){
+    unfollow(id:number){
         return instance.delete(`follow/${id}`).then(response => {
             return response.data
         })

@@ -5,11 +5,10 @@ import Users from "./Users";
 import {
     setCurrentPage,
     setUsers,
-    unfollowSuccess,
     setTotalUsersCount,
     toggleIsFetching,
     UsersInitialStateType,
-    UserType, toggleFollowingInProgress, getUsers, followSuccess, follow, unfollow
+    UserType, toggleFollowingInProgress, getUsers, follow, unfollow
 } from "../../redux/users-reducer";
 import styles from "./Users.module.css";
 import Preloader from "../common/Preloader/Preloader";
@@ -22,7 +21,7 @@ type MapStatePropsType = {
     totalUsersCount: number
     currentPage: number
     isFetching: boolean
-    followingInProgress: Array<string | number>
+    followingInProgress: number[]
 }
 
 type MapDispatchPropsType = {
@@ -32,7 +31,7 @@ type MapDispatchPropsType = {
     setCurrentPage: (currentPage: number) => void
     setTotalUsersCount: (totalCount: number) => void
     toggleIsFetching: (isFetching: boolean) => void
-    toggleFollowingInProgress: (isFetching: boolean, userId: string | number)=> void
+    toggleFollowingInProgress: (isFetching: boolean, userId: number)=> void
     getUsers: (currentPage: number, pageSize: number) => void
 
 

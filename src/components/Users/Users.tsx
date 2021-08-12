@@ -2,8 +2,6 @@ import React from "react";
 import styles from './Users.module.css';
 import userPhoto from "../../assets/user-photo.png";
 import {NavLink} from "react-router-dom";
-import {api} from "../../api/api";
-
 
 const Users = (props: any) => {
 
@@ -56,8 +54,8 @@ const Users = (props: any) => {
                          <div>{u.status}</div>
                      </span>
                      <span>
-                         <div>{'u.location.country'}</div>
-                         <div>{'u.location.city'}</div>
+                         <div>{'______________'}</div>
+
                      </span>
                  </span>
                 </div>)

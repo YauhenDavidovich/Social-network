@@ -36,7 +36,7 @@ export type UsersInitialStateType = {
     totalUsersCount: number,
     currentPage: number,
     isFetching: boolean,
-    followingInProgress: Array<string | number>
+    followingInProgress: number[]
 
 }
 
@@ -121,7 +121,7 @@ export const toggleIsFetching = (isFetching: boolean) => ({
     type: TOGGLE_IS_FETCHING,
     isFetching
 }) as const
-export const toggleFollowingInProgress = (isFetching: boolean, userId: string | number) => ({
+export const toggleFollowingInProgress = (isFetching: boolean, userId: number) => ({
     type: TOGGLE_FOLLOWING_IN_PROGRESS,
     isFetching,
     userId
