@@ -9,6 +9,7 @@ import {DialogInitialStateType, sendMessageAC, updateNewMessageBodyAC} from "../
 
 type MapStatePropsType = {
     dialogPage: DialogInitialStateType
+    isAuth: boolean
 }
 
 type MapDispatchPropsType = {
@@ -20,7 +21,8 @@ type MapDispatchPropsType = {
 
 let mapStateTopProps = (state: AppRootStateType): MapStatePropsType=> {
     return {
-        dialogPage: state.dialogPage
+        dialogPage: state.dialogPage,
+        isAuth: state.auth.isAuth
     }
 }
 
