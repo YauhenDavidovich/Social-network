@@ -26,11 +26,6 @@ const Dialogs = (props:any) => {
     let dialogElements = state.dialogs.map((d: { id: number; name: string; }) => <DialogItem id={d.id} name={d.name}/>)
     let messageElements = state.messages.map((m: { id: number; message: string; }) => <Message id={m.id} message={m.message}/>)
 
-    if(!props.isAuth) {
-       return <Redirect to={'/login'}/>
-    }
-
-
 
     return (
         <div className={style.dialogs}>
