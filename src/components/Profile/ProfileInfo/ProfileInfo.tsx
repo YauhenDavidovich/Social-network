@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
 import userPhoto from "../../../assets/user-photo.png";
+import ProfileStatus from "./ProfileStatus";
 
 
 const ProfileInfo = (props: any) => {
@@ -9,15 +10,13 @@ const ProfileInfo = (props: any) => {
     if (!props.profile) {
         return <Preloader/>
     }
+    debugger
     return (
         <div>
-            <div>
-                <img
-                    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJkHIXlWZwX8_MOjlmFPqY5kRRCayLbVVnqA&usqp=CAU'/>
-            </div>
             <div className={styles.description__block}>
 
-                <img src={props.profile.photos.large ? undefined : userPhoto}/>
+                <img src={props.profile.photos.large ? props.profile.photos.large : userPhoto}/>
+                <ProfileStatus status={"Hello"}/>
                 <div>{props.profile.fullName}</div>
             </div>
         </div>
