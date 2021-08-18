@@ -53,7 +53,7 @@ export const Login = () => {
     })
 
     if(isLoggedIn) {
-        return <Redirect to={'/'}/>
+        return <Redirect to={'/profile'}/>
     }
 
     return <Grid container justify="center">
