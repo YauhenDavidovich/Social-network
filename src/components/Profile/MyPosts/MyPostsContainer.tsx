@@ -17,7 +17,8 @@ let mapStateTopProps = (state: AppRootStateType): PostsInitialStateType => {
     return {
         posts: state.profilePage.posts,
         newPostsText: state.profilePage.newPostsText,
-        profile: state.profilePage.profile
+        profile: state.profilePage.profile,
+        status: state.profilePage.status
     }
 }
 

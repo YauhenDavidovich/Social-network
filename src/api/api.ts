@@ -1,4 +1,5 @@
 import axios from "axios";
+import {ProfileResponseType} from "../redux/profile-reducer";
 
 const instance = axios.create({
     withCredentials: true,
@@ -8,32 +9,7 @@ const instance = axios.create({
     }
 })
 
-export type ContactsType = {
-    facebook?: string
-    website?: string
-    vk?: string
-    twitter?: string
-    instagram?: string
-    youtube?: string
-    github?: string
-    mainLink?: string
-}
 
-export type PhotosType = {
-    small: string
-    large: string
-}
-
-export type ProfileResponseType ={
-    userId: number
-    fullName: string
-    aboutMe: string
-    contacts: ContactsType
-    lookingForAJob: boolean
-    lookingForAJobDescription: string
-    photos: PhotosType
-
-}
 
 export const api = {
     getUsers(pageNumber = 1, pageSize = 10) {
@@ -60,6 +36,17 @@ export const api = {
         return instance.delete(`follow/${id}`).then(response => {
             return response.data
         })
-    }
+    },
+    getStatus(id:string){
+        return instance.get(`profile/status/${id}`).then(response => {
+            return response.data
+        })
+    },
+    updateStatus(status: any){
+        return instance.put(`profile/status`, {status: status}).then(response => {
+            return response.data
+        })
+    },
 }
+
 

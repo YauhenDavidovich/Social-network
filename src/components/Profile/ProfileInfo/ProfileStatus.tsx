@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './ProfileInfo.module.css'
-import userPhoto from "../../../assets/user-photo.png";
-
 
 class ProfileStatus extends React.Component<any, any> {
     state = {
-        editMode: false
+        editMode: false,
+        status: this.props.status
+
     }
     activateEditMode = () => {
         this.setState({
@@ -14,10 +14,27 @@ class ProfileStatus extends React.Component<any, any> {
         )
     }
     deActivateEditMode = () => {
+
         this.setState({
-                editMode: false
+            editMode: false
             }
         )
+        this.props.updateStatus(this.state.status)
+    }
+
+    componentDidUpdate(prevProps: any, prevState: any) {
+        if (prevProps.status !== this.props.status) {
+            this.setState({
+                    status: this.props.status
+                }
+            )
+        }
+    }
+
+    onStatusChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            status: e.currentTarget.value
+        })
     }
 
 
@@ -25,10 +42,10 @@ class ProfileStatus extends React.Component<any, any> {
         return (
             <div>
                 {!this.state.editMode && <div>
-                    <span onDoubleClick={this.activateEditMode}>{this.props.status}</span>
+                    <span onDoubleClick={this.activateEditMode}>{this.props.status || "undefined status"}</span>
                 </div>}
-                {this.state.editMode &&
-                <div><input autoFocus={true} onBlur ={this.deActivateEditMode} value={this.props.status}/></div>}
+                {this.state.editMode && <div>
+                    <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deActivateEditMode} value={this.state.status}/></div>}
             </div>
         );
     }
