@@ -3,7 +3,7 @@ import style from './Diaologs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import {Redirect} from "react-router-dom";
-import Login from "../Login/Login";
+import LoginForm from "../Login/LoginForm";
 
 
 // type DialogsPropsType = {
