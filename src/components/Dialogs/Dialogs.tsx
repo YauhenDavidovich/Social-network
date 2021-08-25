@@ -37,7 +37,7 @@ export const AddMessageForm = () => {
     const dispatch = useDispatch()
     const formik = useFormik({
         initialValues: {
-            message: 'type your message'
+            message: ''
         },
         validate: (values) => {
             const errors: FormikErrorType = {};

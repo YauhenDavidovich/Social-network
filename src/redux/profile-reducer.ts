@@ -1,9 +1,7 @@
 import {ActionsType} from "./redux-store";
 import {api} from "../api/api";
 import {Dispatch} from "redux";
-
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET-STATUS';
 
@@ -85,20 +83,15 @@ const profileReducer = (state: PostsInitialStateType = initialState, action: Act
         case ADD_POST: {
             const newPost: PostType = {
                 id: 5,
-                message: state.newPostsText,
+                message: action.postText,
                 likesCount: 3
             }
             return {
+
                 ...state,
                 posts: [...state.posts, newPost],
                 newPostsText: ''
             };
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostsText: action.newText
-            }
         }
         case SET_USER_PROFILE: {
             return {
@@ -125,12 +118,6 @@ export const addPostAC = (postText: string) => {
     } as const
 }
 
-export const updateNewPostTextAC = (newText: string) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: newText
-    } as const
-}
 export const setUserProfile = (profile: ProfileResponseType) => {
     return {
         type: SET_USER_PROFILE,
@@ -166,7 +153,5 @@ export const updateStatus = (status: string) => (dispatch:Dispatch<ActionsType>)
         }
     })
 }
-
-
 
 export default profileReducer

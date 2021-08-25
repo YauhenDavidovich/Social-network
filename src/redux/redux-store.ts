@@ -1,21 +1,20 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import profileReducer, {addPostAC, setStatus, setUserProfile, updateNewPostTextAC} from "./profile-reducer";
+import profileReducer, {addPostAC, setStatus, setUserProfile} from "./profile-reducer";
 import dialogsReducer, {sendMessageAC} from "./dialog-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import usersReducer, {
-    follow, followSuccess,
+    followSuccess,
     setCurrentPage,
     setTotalUsersCount,
     setUsers, toggleFollowingInProgress,
     toggleIsFetching,
-    unfollow, unfollowSuccess
+    unfollowSuccess
 } from "./users-reducer";
 import authReducer, {setAuthUserData} from "./auth-reducer";
 import thunkMiddleware from "redux-thunk"
 
 
 type AddPostActionType = ReturnType<typeof addPostAC>
-type UpdateNewPostTextActionType = ReturnType<typeof updateNewPostTextAC>
 type SendMessageActionType = ReturnType<typeof sendMessageAC>
 type SetUsersActionType = ReturnType<typeof setUsers>
 type FollowUserActionType = ReturnType<typeof followSuccess>
@@ -32,7 +31,6 @@ type SetStatusActionType = ReturnType<typeof setStatus>
 
 export type ActionsType =
     AddPostActionType
-    | UpdateNewPostTextActionType
     | SendMessageActionType
     | SetUsersActionType
     | FollowUserActionType
