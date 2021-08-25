@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="feat: add login form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialog-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialog-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +93,10 @@
       <workItem from="1628694486280" duration="12975000" />
       <workItem from="1629051817124" duration="11642000" />
       <workItem from="1629201541726" duration="11187000" />
-      <workItem from="1629265736769" duration="10622000" />
+      <workItem from="1629265736769" duration="11398000" />
+      <workItem from="1629728953144" duration="3976000" />
+      <workItem from="1629815568769" duration="79000" />
+      <workItem from="1629819519835" duration="9039000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add users api">
       <created>1627399109047</created>
@@ -246,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629302198308</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: add login form">
+      <created>1629303545212</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1629303545212</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

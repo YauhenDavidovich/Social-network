@@ -1,31 +1,17 @@
-import React, {ChangeEvent} from 'react';
+import React from 'react';
 import style from './Diaologs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {Redirect} from "react-router-dom";
-import LoginForm from "../Login/LoginForm";
+import {useDispatch} from "react-redux";
+import {useFormik} from "formik";
+import {Button, FormControl, FormGroup, Grid, TextField} from "@material-ui/core";
+import {sendMessageAC} from "../../redux/dialog-reducer";
 
-
-// type DialogsPropsType = {
-//     dialogs: Array<DialogItemProps>
-//     messages: Array<MessageItemProps>
-//     newMessageBody: string
-//     dispatch: (action: ActionsType) => void
-// }
 
 const Dialogs = (props:any) => {
     let state = props.dialogPage
-    const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let body = e.currentTarget.value
-        props.updateNewMessageBody(body)
-    }
-    const onSendMessageClick = () => {
-        props.sendMessage()
-    }
-    let newMessageBody = state.newMessageBody
     let dialogElements = state.dialogs.map((d: { id: number; name: string; }) => <DialogItem id={d.id} name={d.name}/>)
     let messageElements = state.messages.map((m: { id: number; message: string; }) => <Message id={m.id} message={m.message}/>)
-
 
     return (
         <div className={style.dialogs}>
@@ -35,17 +21,61 @@ const Dialogs = (props:any) => {
             <div className={style.messages}>
                 <div>{messageElements}</div>
                 <div>
-                    <div><textarea value={newMessageBody}
-                                   onChange={onNewMessageChange}
-                                   placeholder={'Enter your message'}></textarea></div>
-                    <div>
-                        <button onClick={onSendMessageClick} >Send</button>
-                    </div>
+                    <AddMessageForm/>
                 </div>
             </div>
         </div>
     )
 
+}
+
+type FormikErrorType = {
+    message?: string
+}
+
+export const AddMessageForm = () => {
+    const dispatch = useDispatch()
+    const formik = useFormik({
+        initialValues: {
+            message: 'type your message'
+        },
+        validate: (values) => {
+            const errors: FormikErrorType = {};
+            if(!values.message) {
+                errors.message = 'Required';
+            } else if (values.message.length > 200) {
+                errors.message = 'Sorry, message limits 200 symbols';
+            }
+            return errors;
+
+        },
+        onSubmit: values => {
+            dispatch(sendMessageAC(values.message));
+            formik.resetForm()
+        },
+    })
+
+    return <Grid container justify="center">
+        <Grid item xs={4}>
+            <form onSubmit={formik.handleSubmit}>
+                <FormControl>
+                    <FormGroup>
+                        <TextField
+                            label="message"
+                            margin="normal"
+                            variant="filled"
+                            name="message"
+                            onChange={formik.handleChange}
+                            value={formik.values.message}
+                            onBlur={formik.handleBlur}
+                        />
+                        {formik.touched.message && formik.errors.message && <div style={{color: 'red'}}>{formik.errors.message}</div>}
+                        <Button type={'submit'} variant={'contained'} color={'secondary'}>Send</Button>
+                    </FormGroup>
+                </FormControl>
+            </form>
+        </Grid>
+    </Grid>
 }
 
 export default Dialogs;
