@@ -4,8 +4,15 @@ import {Redirect} from "react-router-dom";
 import {AppRootStateType} from "../../redux/redux-store";
 import {useFormik} from "formik";
 import {Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, TextField, Button, Grid} from '@material-ui/core'
+import {login} from "../../redux/auth-reducer";
 
-const LoginForm = (props: any) => {
+const LoginForm = () => {
+    const isLoggedIn = useSelector<AppRootStateType, boolean>(state =>
+        state.auth.isAuth)
+
+    if(isLoggedIn) {
+        return <Redirect to={'/profile'}/>
+    }
     return (<div>
             <h1>Login</h1>
             <Login/>
@@ -21,6 +28,7 @@ type FormikErrorType = {
 
 export const Login = () => {
     const dispatch = useDispatch()
+
     const isLoggedIn = useSelector<AppRootStateType, boolean>(state =>
         state.auth.isAuth)
     const formik = useFormik({
@@ -47,7 +55,7 @@ export const Login = () => {
 
         },
         onSubmit: values => {
-            // dispatch(loginTC(values))
+            dispatch(login(values.email, values.password, values.rememberMe))
             formik.resetForm()
         },
     })

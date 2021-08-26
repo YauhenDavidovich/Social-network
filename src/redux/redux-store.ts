@@ -29,6 +29,8 @@ type SetStatusActionType = ReturnType<typeof setStatus>
 
 
 
+
+
 export type ActionsType =
     AddPostActionType
     | SendMessageActionType
@@ -42,6 +44,7 @@ export type ActionsType =
     | SetUserDataActionType
     | ToggleIsFollowingInProgressActionType
     | SetStatusActionType
+
 
 
 
