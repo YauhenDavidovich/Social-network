@@ -5,11 +5,13 @@ import {updateStatus, getStatus, getUserProfile, ProfileResponseType} from "../.
 import {RouteComponentProps, withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
+import {AppRootStateType} from "../../redux/redux-store";
 
 
 type MapStatePropsType = {
     profile:ProfileResponseType
     status:string
+    currentUserId: number | null
 
 }
 
@@ -27,24 +29,31 @@ type OwnPropsType = MapStatePropsType & MapDispatchPropsType
 
 type PropsType = RouteComponentProps<PathParamsType> & OwnPropsType
 
-function ProfileContainer(props: PropsType) {
-
-    useEffect(() => {
-        let userId = props.match.params.usrID
-        if(!userId) {
-            userId = "15441";
+class ProfileContainer extends React.Component<PropsType> {
+    componentDidMount() {
+        debugger
+        let userId = this.props.match.params.usrID
+        if (!userId) {
+            userId = String(this.props.currentUserId!)
+            if (!userId) {
+                this.props.history.push('/login')
+            }
         }
-        props.getUserProfile(userId);
-        props.getStatus(userId);
-    }, [])
-    return (
-        <Profile profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
-    )
+        this.props.getUserProfile(userId);
+        this.props.getStatus(userId);
+    }
+
+    render() {
+        return (
+            <Profile profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}/>
+        )
+    }
 }
 
-let mapStateToProps = (state: any): MapStatePropsType => ({
+let mapStateToProps = (state: AppRootStateType): MapStatePropsType => ({
     profile: state.profilePage.profile,
-    status: state.profilePage.status
+    status: state.profilePage.status,
+    currentUserId: state.auth.userId,
 })
 
 export default compose<React.ComponentType>(

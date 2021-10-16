@@ -1,4 +1,4 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
+import {Action, applyMiddleware, combineReducers, createStore} from "redux";
 import profileReducer, {addPostAC, setStatus, setUserProfile} from "./profile-reducer";
 import dialogsReducer, {sendMessageAC} from "./dialog-reducer";
 import sidebarReducer from "./sidebar-reducer";
@@ -12,6 +12,7 @@ import usersReducer, {
 } from "./users-reducer";
 import authReducer, {setAuthUserData} from "./auth-reducer";
 import thunkMiddleware from "redux-thunk"
+import appReducer, {setInitialised} from "./app-reducer";
 
 
 type AddPostActionType = ReturnType<typeof addPostAC>
@@ -26,9 +27,7 @@ type SetUserProfileActionType = ReturnType<typeof setUserProfile>
 type SetUserDataActionType = ReturnType<typeof setAuthUserData>
 type ToggleIsFollowingInProgressActionType = ReturnType<typeof toggleFollowingInProgress>
 type SetStatusActionType = ReturnType<typeof setStatus>
-
-
-
+type SetInitialiseActionType = ReturnType<typeof setInitialised>
 
 
 export type ActionsType =
@@ -44,8 +43,7 @@ export type ActionsType =
     | SetUserDataActionType
     | ToggleIsFollowingInProgressActionType
     | SetStatusActionType
-
-
+    | SetInitialiseActionType
 
 
 const rootReducer = combineReducers({
@@ -53,8 +51,9 @@ const rootReducer = combineReducers({
         dialogPage: dialogsReducer,
         sidebar: sidebarReducer,
         users: usersReducer,
-        auth: authReducer
-    }
+        auth: authReducer,
+        app: appReducer
+}
 )
 
 

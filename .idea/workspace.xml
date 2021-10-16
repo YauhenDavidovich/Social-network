@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="feat: add post form">
+    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="feat: add logout">
+      <change afterPath="$PROJECT_DIR$/src/redux/app-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
     </list>
@@ -44,16 +47,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Login" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\JS\social-network\Social-network\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JS\social-network\Social-network\src\redux" />
       <recent name="D:\JS\social-network\Social-network\src\components\Login" />
       <recent name="D:\JS\social-network\Social-network\src\components\Header" />
-      <recent name="D:\JS\social-network\Social-network\src\redux" />
       <recent name="D:\JS\social-network\Social-network\src\components\Profile" />
       <recent name="D:\JS\social-network\Social-network\src\components\common\Preloader" />
     </key>
@@ -98,7 +101,11 @@
       <workItem from="1629265736769" duration="11398000" />
       <workItem from="1629728953144" duration="3976000" />
       <workItem from="1629815568769" duration="79000" />
-      <workItem from="1629819519835" duration="19388000" />
+      <workItem from="1629819519835" duration="23019000" />
+      <workItem from="1630678462213" duration="49000" />
+      <workItem from="1632494159412" duration="1147000" />
+      <workItem from="1634058229682" duration="2936000" />
+      <workItem from="1634287651166" duration="16636000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add users api">
       <created>1627399109047</created>
@@ -275,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629912963830</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="feat: add logout">
+      <created>1629993371813</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1629993371813</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +332,7 @@
     <MESSAGE value="feat: add login form" />
     <MESSAGE value="feat: add send message form" />
     <MESSAGE value="feat: add post form" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add post form" />
+    <MESSAGE value="feat: add logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add logout" />
   </component>
 </project>

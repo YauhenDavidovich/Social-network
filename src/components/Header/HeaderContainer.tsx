@@ -3,18 +3,10 @@ import Header from "./Header";
 import {connect} from "react-redux";
 import {logout, setAuthUserData} from "../../redux/auth-reducer";
 import {api} from "../../api/api";
+import {AppRootStateType} from "../../redux/redux-store";
 
 
 function HeaderContainer(props: any) {
-    useEffect(() => {
-        api.checkAuth().then(data => {
-            if (data.resultCode === 0) {
-                let {id, login, email} = data.data;
-                props.setAuthUserData(id, login, email)
-            }
-        });
-    }, [])
-
 
     return (
         <Header {...props}/>
@@ -22,7 +14,7 @@ function HeaderContainer(props: any) {
 
 }
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: AppRootStateType) => ({
 
         isAuth: state.auth.isAuth, login: state.auth.login
 
