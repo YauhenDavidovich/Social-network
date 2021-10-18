@@ -23,7 +23,7 @@ const Users = (props: any) => {
 
         </div>
         {
-            props.usersPage.users.map((u: { id: string | number | null | undefined; photos: { small: string | null | undefined; }; followed: any; name: React.ReactNode; status: React.ReactNode; }) =>
+            props.users.map((u: { id: string | number | null | undefined; photos: { small: string | null | undefined; }; followed: any; name: React.ReactNode; status: React.ReactNode; }) =>
 
                 <div key={u.id}>
 
