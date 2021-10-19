@@ -31,7 +31,6 @@ type PropsType = RouteComponentProps<PathParamsType> & OwnPropsType
 
 class ProfileContainer extends React.Component<PropsType> {
     componentDidMount() {
-        debugger
         let userId = this.props.match.params.usrID
         if (!userId) {
             userId = String(this.props.currentUserId!)
