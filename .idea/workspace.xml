@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="refactor: replace users mapStateToProps with selectors">
+    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="refactor: replace set status with useState">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +100,7 @@
       <workItem from="1630678462213" duration="49000" />
       <workItem from="1632494159412" duration="1147000" />
       <workItem from="1634058229682" duration="2936000" />
-      <workItem from="1634287651166" duration="24028000" />
+      <workItem from="1634287651166" duration="26425000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add users api">
       <created>1627399109047</created>
@@ -297,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634548234359</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="refactor: replace set status with useState">
+      <created>1634669489381</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1634669489381</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +325,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: extends React.Component" />
     <MESSAGE value="feat: add pagination" />
     <MESSAGE value="feat: add UsersContainer" />
     <MESSAGE value="feat: add preloader" />
@@ -342,6 +349,7 @@
     <MESSAGE value="feat: add logout" />
     <MESSAGE value="feat: add app initialise" />
     <MESSAGE value="refactor: replace users mapStateToProps with selectors" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: replace users mapStateToProps with selectors" />
+    <MESSAGE value="refactor: replace set status with useState" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: replace set status with useState" />
   </component>
 </project>

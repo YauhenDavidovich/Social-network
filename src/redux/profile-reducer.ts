@@ -140,6 +140,7 @@ export const getUserProfile = (userId:string) => (dispatch:Dispatch<ActionsType>
 }
 
 export const getStatus = (userId:string) => (dispatch:Dispatch<ActionsType>)=> {
+    debugger
     api.getStatus(userId).then(data => {
         dispatch(setStatus(data))
     })

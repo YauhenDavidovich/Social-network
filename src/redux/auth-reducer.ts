@@ -6,7 +6,7 @@ const SET_USER_DATA = 'SET-USER-DATA';
 
 
 const initialState = {
-    userId: null as number | null,
+    id: null as number | null,
     login: null as string | null,
     email: null as string | null,
     isAuth: false
@@ -36,8 +36,10 @@ export const getAuthUserData = () => (dispatch: Dispatch<any>) => {
         .then(response => {
                 debugger
                 if (response.resultCode === 0) {
-                    let {userId, login, email} = response.data;
-                    dispatch(setAuthUserData({userId, login, email, isAuth: true}))
+                    debugger
+                    let {email, id, login} = response.data;
+                    debugger
+                    dispatch(setAuthUserData({id, login, email, isAuth: true}))
                 }
             }
         )
@@ -65,7 +67,7 @@ export const login = (email: string, password: string, rememberMe: boolean) => (
 export const logout = () => async (dispatch: Dispatch<any>) => {
     let data = await api.logout()
     if (data.data.resultCode === 0) {
-        dispatch(setAuthUserData({userId: null, email: null, login: null, isAuth: false}))
+        dispatch(setAuthUserData({id: null, email: null, login: null, isAuth: false}))
     }
 }
 

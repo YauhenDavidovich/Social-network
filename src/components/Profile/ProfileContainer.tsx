@@ -31,8 +31,10 @@ type PropsType = RouteComponentProps<PathParamsType> & OwnPropsType
 
 class ProfileContainer extends React.Component<PropsType> {
     componentDidMount() {
+
         let userId = this.props.match.params.usrID
         if (!userId) {
+            debugger
             userId = String(this.props.currentUserId!)
             if (!userId) {
                 this.props.history.push('/login')
@@ -52,7 +54,7 @@ class ProfileContainer extends React.Component<PropsType> {
 let mapStateToProps = (state: AppRootStateType): MapStatePropsType => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
-    currentUserId: state.auth.userId,
+    currentUserId: state.auth.id,
 })
 
 export default compose<React.ComponentType>(
