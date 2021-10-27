@@ -11,7 +11,7 @@ import usersReducer, {
     unfollowSuccess
 } from "./users-reducer";
 import authReducer, {setAuthUserData} from "./auth-reducer";
-import thunkMiddleware from "redux-thunk"
+import thunkMiddleware, { ThunkAction } from "redux-thunk";
 import appReducer, {setInitialised} from "./app-reducer";
 
 
@@ -28,6 +28,8 @@ type SetUserDataActionType = ReturnType<typeof setAuthUserData>
 type ToggleIsFollowingInProgressActionType = ReturnType<typeof toggleFollowingInProgress>
 type SetStatusActionType = ReturnType<typeof setStatus>
 type SetInitialiseActionType = ReturnType<typeof setInitialised>
+type FollowSuccessActionType = ReturnType<typeof followSuccess>;
+type UnfollowSuccessActionType = ReturnType<typeof unfollowSuccess>;
 
 
 export type ActionsType =
@@ -44,6 +46,8 @@ export type ActionsType =
     | ToggleIsFollowingInProgressActionType
     | SetStatusActionType
     | SetInitialiseActionType
+    | FollowSuccessActionType
+    | UnfollowSuccessActionType
 
 
 const rootReducer = combineReducers({
@@ -58,6 +62,17 @@ const rootReducer = combineReducers({
 
 
 export type AppRootStateType = ReturnType<typeof rootReducer>
+
+export type InferActionsTypes<T> = T extends {
+        [keys: string]: (...args: any[]) => infer U;
+    }
+    ? U
+    : never;
+
+export type BaseThunkType<
+    A extends Action = Action,
+    R = Promise<void>
+    > = ThunkAction<R, AppRootStateType, unknown, A>;
 
 let store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 // @ts-ignore

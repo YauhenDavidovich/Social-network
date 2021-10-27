@@ -2,7 +2,7 @@ import {ActionsType} from "./redux-store";
 import {Dispatch} from "redux";
 import {api} from "../api/api";
 
-const SET_USER_DATA = 'SET-USER-DATA';
+const SET_USER_DATA = '/auth/SET-USER-DATA';
 
 
 const initialState = {
@@ -31,42 +31,26 @@ const authReducer = (state: AuthInitialStateType = initialState, action: Actions
 
 export const setAuthUserData = (payload: UsersAuthDataType) => ({type: SET_USER_DATA, payload}) as const
 
-export const getAuthUserData = () => (dispatch: Dispatch<any>) => {
-    return api.checkAuth()
-        .then(response => {
-                debugger
-                if (response.resultCode === 0) {
-                    debugger
-                    let {email, id, login} = response.data;
-                    debugger
-                    dispatch(setAuthUserData({id, login, email, isAuth: true}))
-                }
-            }
-        )
+export const getAuthUserData = () => async (dispatch: Dispatch<any>) => {
+    let response = await api.checkAuth();
+    if (response.resultCode === 0) {
+        let {email, id, login} = response.data;
+        dispatch(setAuthUserData({id, login, email, isAuth: true}))
+    }
 }
 
-export const login = (email: string, password: string, rememberMe: boolean) => (dispatch: Dispatch<any>) => {
-
-    api.login(email, password, rememberMe)
-        .then(response => {
-                debugger
-                if (response.data.resultCode === 0) {
-                    dispatch(getAuthUserData())
-                } else (
-                    alert(response.data.messages)
-                )
-            }
-        )
-        .catch((e) => {
-            const error = e.response ? e.response.data.error : (e.message + ', more details in the console');
-            alert(error)
-            console.log('Error: ', {...e})
-        })
+export const login = (email: string, password: string, rememberMe: boolean) => async (dispatch: Dispatch<any>) => {
+    let response = await api.login(email, password, rememberMe)
+    if (response.data.resultCode === 0) {
+        dispatch(getAuthUserData())
+    } else (
+        alert(response.data.messages)
+    )
 }
 
 export const logout = () => async (dispatch: Dispatch<any>) => {
-    let data = await api.logout()
-    if (data.data.resultCode === 0) {
+    let response = await api.logout()
+    if (response.data.resultCode === 0) {
         dispatch(setAuthUserData({id: null, email: null, login: null, isAuth: false}))
     }
 }
