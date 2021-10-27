@@ -40,14 +40,14 @@ export type ProfileResponseType ={
 
 
 
-type InitialSTateType = {
+export type ProfileInitialStateType = {
     profile: ProfileResponseType
     newPostsText:string,
     posts: PostType[],
     status: string
 }
 
-const initialState:InitialSTateType = {
+const initialState:ProfileInitialStateType = {
     posts:
         [{id: 1, message: "Hi", likesCount: 4},
             {id: 2, message: "Hey", likesCount: 14},

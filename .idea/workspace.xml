@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="feat: update status with useEffect">
+    <list default="true" id="2a84295e-7e3b-4537-b413-fe575f95d7cc" name="Default Changelist" comment="feat: add gh-pages homepage">
+      <change afterPath="$PROJECT_DIR$/src/redux/profile-reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\JS\social-network\Social-network\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -57,7 +59,30 @@
       <recent name="D:\JS\social-network\Social-network\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Jest.new post should be added">
+    <configuration name="new post should be added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.ts" />
+      <test-names>
+        <test-name value="new post should be added" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -70,6 +95,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.new post should be added" />
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -99,7 +126,8 @@
       <workItem from="1632494159412" duration="1147000" />
       <workItem from="1634058229682" duration="2936000" />
       <workItem from="1634287651166" duration="27712000" />
-      <workItem from="1634831580137" duration="51000" />
+      <workItem from="1634831580137" duration="215000" />
+      <workItem from="1635318724874" duration="2336000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add users api">
       <created>1627399109047</created>
@@ -311,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634677949078</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: add gh-pages homepage">
+      <created>1634831658397</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1634831658397</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +366,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add UsersContainer" />
     <MESSAGE value="feat: add preloader" />
     <MESSAGE value="fix: refactor import" />
     <MESSAGE value="feat: add profile page info api" />
@@ -356,6 +390,7 @@
     <MESSAGE value="refactor: replace users mapStateToProps with selectors" />
     <MESSAGE value="refactor: replace set status with useState" />
     <MESSAGE value="feat: update status with useEffect" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update status with useEffect" />
+    <MESSAGE value="feat: add gh-pages homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add gh-pages homepage" />
   </component>
 </project>
